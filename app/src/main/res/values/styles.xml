@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:actionBarTabBarStyle">@style/MyActionBarTheme</item>
+    </style>
+    <style name="MyActionBarTheme" parent="@android:style/Widget.ActionBar.TabBar">
+        <!--<item name="android:background">@drawable/actionbar_tab_bg</item>-->
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingRight">32dp</item>
+    </style>
+
+</resources>
