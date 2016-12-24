@@ -1,4 +1,4 @@
-package com.example.khoavin.mymusic;
+package com.example.khoavin.nativemusic;
 
 import org.junit.Test;
 

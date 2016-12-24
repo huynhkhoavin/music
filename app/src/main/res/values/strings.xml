@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">MyMusic</string>
+    <string name="app_name">Nhạc</string>
+    <string name="content">Content</string>
+    <string name="show">Show</string>
+    <string name="slide">Slide</string>
+    <string name="hide">Hide</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
