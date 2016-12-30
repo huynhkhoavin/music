@@ -91,7 +91,7 @@ public class HomeTab extends Fragment {
             }
         });
         listView = (ListView) view.findViewById(R.id.horizontal_listview);
-        listView.setAdapter(adapter);
+        //listView.setAdapter(adapter);
         return view;
     }
 

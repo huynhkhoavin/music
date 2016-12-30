@@ -1,30 +1,37 @@
 package com.example.khoavin.nativemusic;
-import android.app.FragmentTransaction;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
+import com.example.khoavin.nativemusic.DataObject.Song;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
+import com.example.khoavin.nativemusic.ToolsFactory.MusicService;
+import com.example.khoavin.nativemusic.ToolsFactory.MusicService.MusicBinder;
+import com.example.khoavin.nativemusic.ToolsFactory.RoundImage;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
+import java.util.ArrayList;
+
+import co.mobiwise.library.InteractivePlayerView;
+import co.mobiwise.library.OnActionClickedListener;
+
+public class MainActivity extends AppCompatActivity implements ActionBar.TabListener,OnActionClickedListener {
     //region VIEWPAGER+ACTIONBAR
     private ViewPager viewPager;
     private TabPagerAdapter tabPagerAdapter;
@@ -47,8 +54,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         viewPager.setAdapter(tabPagerAdapter);
         actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.maxresdefault);
+        actionBar.setDisplayShowTitleEnabled(true);
+        //actionBar.hide();
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.dark_background);
         Bitmap blurBitmap = BlurBuilder.blur(bitmap,getBaseContext());
         //view.setBackground(new BitmapDrawable(getResources(), bitmap));
 
@@ -90,9 +98,54 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         slidingLayout.setPanelSlideListener(onSlideListener());
 //        btnHide.setOnClickListener(onHideListener());
 //        btnShow.setOnClickListener(onShowListener());
+//        ImageView song_image = (ImageView)findViewById(R.id.song_image);
+//            Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(),R.drawable.nhac_dan_ca);
+//            RoundImage roundImage = new RoundImage(bitmap2);
+//            song_image.setImageDrawable(roundImage);
+
+        //endregion
+        //region Background Music
+//        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.alone);
+//        mediaPlayer.start();
+        //endregion
+        //region InterativePlayerView
+        final InteractivePlayerView mInteractivePlayerView = (InteractivePlayerView) findViewById(R.id.interactivePlayerView);
+        mInteractivePlayerView.setMax(114);
+        mInteractivePlayerView.setProgress(50);
+        mInteractivePlayerView.setOnActionClickedListener(this);
+
+        final ImageView imageView = (ImageView) findViewById(R.id.control);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!mInteractivePlayerView.isPlaying()) {
+                    mInteractivePlayerView.start();
+                    imageView.setBackgroundResource(R.drawable.ic_action_pause);
+                } else {
+                    mInteractivePlayerView.stop();
+                    imageView.setBackgroundResource(R.drawable.ic_action_play);
+                }
+            }
+        });
         //endregion
     }
+    //region Tab Method
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
+        viewPager.setCurrentItem(tab.getPosition());
+    }
 
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
+
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
+
+    }
+    //endregion
+    //region Others Method
     @Override
     public void onAttachFragment(Fragment fragment){
     }
@@ -128,13 +181,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             @Override
             public void onPanelCollapsed(View view) {
 //                textView.setText("panel Collapse");
-                actionBar.show();
+                //actionBar.show();
             }
 
             @Override
             public void onPanelExpanded(View view) {
 //                textView.setText("panel expand");
-                actionBar.hide();
+                //actionBar.hide();
             }
 
             @Override
@@ -144,27 +197,24 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
             @Override
             public void onPanelHidden(View view) {
-//                textView.setText("panel is Hidden");
+                Log.e("onPanelHidden","Panel Hidden");
             }
         };
     }
 
-    //region Tab Method
     @Override
-    public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-        viewPager.setCurrentItem(tab.getPosition());
+    public void onActionClicked(int id) {
+        switch (id) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
     }
 
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-
-    }
-
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-
-    }
     //endregion
-
-
 }

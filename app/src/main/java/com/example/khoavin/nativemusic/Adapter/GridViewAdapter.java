@@ -1,6 +1,9 @@
 package com.example.khoavin.nativemusic.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.khoavin.nativemusic.R;
+import com.example.khoavin.nativemusic.ToolsFactory.RoundImage;
 
 import org.w3c.dom.Text;
 
@@ -50,6 +54,10 @@ public class GridViewAdapter extends BaseAdapter {
             TextView textView = (TextView)grid.findViewById(R.id.grid_text);
             ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
             textView.setText(mWeb[position]);
+            //System.out.println(imageId[position]+" - - "+R.drawable.nhac_dan_ca);
+//            Bitmap bitmap = BitmapFactory.decodeResource(grid.getResources(),imageId[position]);
+//            RoundImage roundImage = new RoundImage(bitmap);
+//            imageView.setImageDrawable(roundImage);
             imageView.setImageResource(imageId[position]);
         }
         else{
