@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.example.khoavin.nativemusic.DataObject.Video;
 import com.example.khoavin.nativemusic.R;
 
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatListenerCount;
+
 /**
  * Created by OatOal on 12/01/2017.
  */
@@ -54,7 +56,7 @@ public class ListVideoSmallAdapter extends BaseAdapter {
             videoName.setText(mVideoSource[position].GetName());
             videoImage.setImageResource(mVideoSource[position].GetVideoImage());
             singer.setText(mVideoSource[position].GetSinger());
-            listenerCount.setText(mVideoSource[position].GetListenerCountString());
+            listenerCount.setText(FormatListenerCount(mVideoSource[position].GetListenerCount()));
         }
         else{
             listView = (View)convertView;

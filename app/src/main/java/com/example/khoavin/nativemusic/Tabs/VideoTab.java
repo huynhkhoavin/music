@@ -46,18 +46,18 @@ public class VideoTab extends Fragment {
     ListView listView;
 
     Video[] videoSource = {
-            //new Video("Lạc trôi", "Sơn Tùng MTP", "", 999000, R.drawable.background),
-            //new Video("Em của ngày hôm qua", "Sơn Tùng MTP", "", 725000, R.drawable.background),
-            new Video("Cơn mưa ngang qua", "Sơn Tùng MTP", "", 152000, R.drawable.model_female),
-            new Video("Dấu mưa", "Trung Quân Idol", "", 65000, R.drawable.nhac_dan_ca),
-            new Video("Sai càng sai", "Chi Dân", "", 32000, R.drawable.model_female),
-            new Video("Duyên nghèo", "Mạnh Quỳnh - Phi Nhung", "", 44000, R.drawable.nhac_dan_ca),
-            new Video("Ru lại câu hò", "Cẩm Ly", "", 350000, R.drawable.model_female),
-            new Video("Căn nhà màu tím", "Mạnh Quỳnh - Phi Nhung", "", 116000, R.drawable.background),
-            new Video("Áo hoa", "Quang Lê - Mai Thiên Vân", "", 83000, R.drawable.model_female),
-            new Video("Chuyện tình Lan và Điệp", "Tui Chịu", "", 74000, R.drawable.nhac_dan_ca),
-            new Video("Khúc thụy du", "Khánh Ly", "", 999, R.drawable.model_female),
-            new Video("Xuân tha hương lạc xứ", "Trường Vũ", "", 325, R.drawable.background)
+            new Video("Cơn mưa ngang qua", "Sơn Tùng MTP", "", 65239000, R.drawable.video_1),
+            new Video("Dấu mưa", "Trung Quân Idol", "", 65000, R.drawable.video_2),
+            new Video("Sai càng sai", "Chi Dân", "", 32000, R.drawable.video_3),
+            new Video("Duyên nghèo", "Mạnh Quỳnh - Phi Nhung", "", 44000, R.drawable.video_4),
+            new Video("Ru lại câu hò", "Cẩm Ly", "", 350000, R.drawable.video_5),
+            new Video("Căn nhà màu tím", "Mạnh Quỳnh - Phi Nhung", "", 116000, R.drawable.video_6),
+            new Video("Áo hoa", "Quang Lê - Mai Thiên Vân", "", 83000, R.drawable.video_1),
+            new Video("Chuyện tình Lan và Điệp", "Tui Chịu", "", 74000, R.drawable.video_2),
+            new Video("Khúc thụy du", "Khánh Ly", "", 999, R.drawable.video_3),
+            new Video("Xuân tha hương lạc xứ", "Trường Vũ", "", 325, R.drawable.video_4),
+            new Video("Lạc trôi", "Sơn Tùng MTP", "", 999000, R.drawable.video_5),
+            new Video("Em của ngày hôm qua", "Sơn Tùng MTP", "", 725000, R.drawable.video_6)
     };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

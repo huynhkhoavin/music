@@ -2,14 +2,11 @@ package com.example.khoavin.nativemusic;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.khoavin.nativemusic.Adapter.ListVideoSmallAdapter;
 import com.example.khoavin.nativemusic.DataObject.Video;
-
-/**
- * Created by OatOal on 1/12/2017.
- */
 
 public class VideoPlayerActivity extends AppCompatActivity {
 
@@ -29,7 +26,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.video_player_fragment);
+        setContentView(R.layout.activity_video_player);
         mSmallVideoListView = (ListView)findViewById(R.id.video_list_view_small);
 
         ListVideoSmallAdapter adapter = new ListVideoSmallAdapter(getBaseContext(), videoSource);

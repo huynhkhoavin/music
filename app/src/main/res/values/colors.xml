@@ -10,4 +10,5 @@
     <color name="borrow">#ddd</color>
     <color name="small_text">#818181</color>
     <color name="big_text">#060606</color>
+    <color name="nct">#0099cc</color>
 </resources>

@@ -11,13 +11,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/model_female"
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
+        android:src="@drawable/nhac_dan_ca"
         android:layout_marginBottom="50dp"
         android:scaleType="fitXY"
         android:adjustViewBounds = "true"
-        android:id="@+id/video_image_parent" />
+        android:id="@+id/video_image_parent"
+        android:padding="0.5dp"
+        android:background="@color/small_text"/>
 
     <LinearLayout
         android:layout_width="50dp"
@@ -33,13 +33,13 @@
             android:layout_gravity="center"
             android:background="@android:drawable/stat_sys_headset"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="42dp"
             android:layout_height="match_parent"
-            android:text="90k"
+            android:text="999 K"
             android:textColor="@color/white"
-            android:layout_marginLeft="8dp"
             android:gravity="center"
             android:textSize="10sp"
+            android:textStyle="bold"
             android:id="@+id/video_listener_count_parent"/>
     </LinearLayout>
 
@@ -55,12 +55,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:text="Lạc Trôi"
-            android:textStyle="bold"
             android:textColor="@color/big_text"
             android:layout_marginTop="5dp"
             android:textSize="15sp"
+            android:maxLines="2"
             android:id="@+id/video_name_parent"/>
 
         <TextView
