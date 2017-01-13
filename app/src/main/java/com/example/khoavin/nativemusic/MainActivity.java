@@ -13,14 +13,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
 import com.example.khoavin.nativemusic.DataObject.Song;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
+import com.example.khoavin.nativemusic.ToolsFactory.EqualizerActivity;
 import com.example.khoavin.nativemusic.ToolsFactory.MusicService;
 import com.example.khoavin.nativemusic.ToolsFactory.MusicService.MusicBinder;
 import com.example.khoavin.nativemusic.ToolsFactory.RoundImage;
@@ -54,9 +58,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         viewPager.setAdapter(tabPagerAdapter);
         actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(true);
+        //actionBar.setDisplayShowTitleEnabled(true);
+        this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
         //actionBar.hide();
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.dark_background);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.background);
         Bitmap blurBitmap = BlurBuilder.blur(bitmap,getBaseContext());
         //view.setBackground(new BitmapDrawable(getResources(), bitmap));
 
@@ -128,6 +133,21 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             }
         });
         //endregion
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent it = new Intent(this, SettingActivity.class);
+            startActivity(it);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
     //region Tab Method
     @Override
@@ -214,6 +234,15 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             default:
                 break;
         }
+    }
+
+    //endregion
+    //region Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     //endregion

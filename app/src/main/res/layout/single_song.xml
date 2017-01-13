@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/music2"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/line1"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/darker_gray"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:src="@drawable/model_female"
+        android:id="@+id/song_image" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lines="1"
+            android:text="Same Old Love - Selena Gomez"
+            android:textColor="#ddd"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:id="@+id/song_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Selena Gomez . 4:24"
+            android:textColor="#ddd"
+            android:textSize="12sp"
+            android:id="@+id/song_detail" />
+    </LinearLayout>
+</LinearLayout>

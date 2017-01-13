@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -20,11 +21,13 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.support.v8.renderscript.*;
 import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.GridViewAdapter;
+import com.example.khoavin.nativemusic.MainActivity;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
 
@@ -76,11 +79,12 @@ public class HomeTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment,container,false);
-        ImageView imageView = (ImageView)view.findViewById(R.id.image_view);
+        //ImageView imageView = (ImageView)view.findViewById(R.id.image_view);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.white);
         Bitmap blurBitmap = BlurBuilder.blur(bitmap,this.getContext());
         //view.setBackground(new BitmapDrawable(getResources(), bitmap));
 
+        //region GRIDVIEW
         GridViewAdapter adapter = new GridViewAdapter(getActivity().getBaseContext(),web,imageId);
         grid = (GridView)view.findViewById(R.id.grid_view);
         grid.setAdapter(adapter);
@@ -88,10 +92,24 @@ public class HomeTab extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getActivity(), "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                PopupMenu popupMenu = new PopupMenu(getActivity(),view);
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(getActivity(),"Popup : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+                popupMenu.show();//showing popup menu
             }
         });
         listView = (ListView) view.findViewById(R.id.horizontal_listview);
-        //listView.setAdapter(adapter);
+        //endregion
+
+        //endregion
         return view;
     }
 

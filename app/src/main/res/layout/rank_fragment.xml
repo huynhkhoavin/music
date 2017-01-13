@@ -8,4 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_change_fragment" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 </LinearLayout>

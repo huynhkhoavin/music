@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.khoavin.nativemusic.Adapter.SmallPlaylistAdapter;
 import com.example.khoavin.nativemusic.Fragment.DetailFragment;
 import com.example.khoavin.nativemusic.R;
 
@@ -24,25 +25,18 @@ import static android.support.v7.appcompat.R.styleable.ActionBar;
 
 public class RankTab extends Fragment {
     ActionBar actionbar;
+    int[] Sequences = {1,2,3,4};
+    String[] SongNames = {"Lạc Trôi", "Đi Về Đâu","Lạc Nhau Có Phải Muôn Đời", "Phía Sau Một Cô Gái"};
+    String[] Singers = {"Sơn Tùng M-TP", "Tiên Tiên", "Errik ST.319", "Soobin Hoàng Sơn"};
+    String[] HearNumber = {"13k","5k","4.3k","4.1k"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.rank_fragment,container,false);
-        Button btnChange = (Button)view.findViewById(R.id.btn_change_fragment);
-        btnChange.setOnClickListener(onChangeFragment());
+
+        SmallPlaylistAdapter smallPlaylistAdapter = new SmallPlaylistAdapter(this.getActivity().getBaseContext(),Sequences,SongNames,Singers,HearNumber);
+
         return view;
     }
 
-    private View.OnClickListener onChangeFragment() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DetailFragment fragment  = new DetailFragment();
-                //actionbar.hide();
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_layout,fragment);
-                fragmentTransaction.commit();
-            }
-        };
-    }
 }

@@ -1,15 +1,28 @@
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-     android:layout_width="match_parent"
-    >
-    <android.support.v7.widget.SearchView
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-    </android.support.v7.widget.SearchView>
+        android:layout_height="match_parent">
+        <!-- The main content view -->
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!-- The navigation drawer -->
+        <ListView android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#111"/>
+    </android.support.v4.widget.DrawerLayout>
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -24,7 +37,7 @@
             android:gravity="bottom"
             sothree:umanoDragView="@+id/dragView"
             sothree:umanoOverlay="true"
-            sothree:umanoPanelHeight="80dp"
+            sothree:umanoPanelHeight="60dp"
             sothree:umanoParalaxOffset="100dp"
             sothree:umanoShadowHeight="8dp">
 
@@ -63,6 +76,7 @@
                     android:textSize="20sp" />
 
                 <TextView
+
                     android:id="@+id/musicArtistName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,7 +89,7 @@
                 <RelativeLayout
                     android:id="@+id/songPlayerTopLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="200dp"
                     android:layout_below="@+id/musicArtistName"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp">
@@ -83,8 +97,8 @@
 
                     <co.mobiwise.library.InteractivePlayerView
                         android:id="@+id/interactivePlayerView"
-                        android:layout_width="230dp"
-                        android:layout_height="230dp"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
                         android:layout_centerInParent="true"
                         app:imageCover="@drawable/one_direction"
                         app:selectedAction1="@drawable/shuffle_selected"
@@ -115,7 +129,7 @@
                 <RelativeLayout
                     android:id="@+id/latestAddedSongs"
                     android:layout_width="wrap_content"
-                    android:layout_height="220dp"
+                    android:layout_height="250dp"
                     android:layout_alignParentBottom="true"
                     android:background="#262626">
 

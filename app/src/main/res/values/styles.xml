@@ -13,14 +13,36 @@
 
         <!--<item name="android:actionBarTabTextStyle">@style/tabcolor</item>-->
     </style>
+
+    <style name="theme">
+        <item name="android:windowTitleBackgroundStyle">@style/themeTitleBackground</item>
+        <item name="android:windowTitleSize">65dip</item>
+
+    </style>
+
+    <style name="themeTitleBackground">
+        <item name="android:layout_height">wrap_content</item>
+
+
+    </style>
+
     <style name="MyActionBarTheme" parent="@android:style/Widget.ActionBar.TabBar">
         <!--<item name="android:background">@drawable/actionbar_tab_bg</item>-->
         <item name="android:paddingLeft">32dp</item>
         <item name="android:paddingRight">32dp</item>
         <item name="android:background">#ffa500</item>
-        <item name="android:elevation">8dp</item>
     </style>
+
     <style name="tabcolor" parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
         <item name="android:textColor">@android:color/background_light</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

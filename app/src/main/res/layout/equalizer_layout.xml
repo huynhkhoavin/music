@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Clock wise - 270 -->
+    <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+        android:id="@+id/seekBarContainer2"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/seekBarContainer1"
+        android:layout_height="150dp"
+
+        android:layout_marginLeft="50dp">
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:splitTrack="false"
+            app:seekBarRotation="CW270"
+            android:max="400"
+            android:progress="200" />
+    </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+</LinearLayout>
