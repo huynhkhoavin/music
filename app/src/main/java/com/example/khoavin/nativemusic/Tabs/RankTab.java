@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 
+import com.example.khoavin.nativemusic.Adapter.PlaylistAdapter;
 import com.example.khoavin.nativemusic.Adapter.SmallPlaylistAdapter;
 import com.example.khoavin.nativemusic.Fragment.DetailFragment;
 import com.example.khoavin.nativemusic.R;
@@ -25,17 +27,22 @@ import static android.support.v7.appcompat.R.styleable.ActionBar;
 
 public class RankTab extends Fragment {
     ActionBar actionbar;
-    int[] Sequences = {1,2,3,4};
-    String[] SongNames = {"Lạc Trôi", "Đi Về Đâu","Lạc Nhau Có Phải Muôn Đời", "Phía Sau Một Cô Gái"};
-    String[] Singers = {"Sơn Tùng M-TP", "Tiên Tiên", "Errik ST.319", "Soobin Hoàng Sơn"};
-    String[] HearNumber = {"13k","5k","4.3k","4.1k"};
+    int[] Sequences = {2,3,4,5,6,7,8,9};
+    String[] SongNames = {"Đi Về Đâu","Lạc Nhau Có Phải Muôn Đời", "Phía Sau Một Cô Gái", "Cho Em Gần Anh Thêm Chút Nữa", "Con Tim Tan Vỡ", "Vỡ Tan","Đi Để Trở Về"};;
+    String[] Singers = {"Tiên Tiên", "Errik ST.319", "Soobin Hoàng Sơn", "Hương Tràm","Phan Mạnh Quỳnh","Trịnh Thăng Bình","Soobin Hoàng Sơn"};
+    String[] HearNumber = {"5k","4.3k","4.1k","5k","4.3k","4.1k","5k","4.3k"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.rank_fragment,container,false);
 
         SmallPlaylistAdapter smallPlaylistAdapter = new SmallPlaylistAdapter(this.getActivity().getBaseContext(),Sequences,SongNames,Singers,HearNumber);
-
+        SmallPlaylistAdapter smallPlaylistAdapter2 = new SmallPlaylistAdapter(this.getActivity().getBaseContext(),Sequences,SongNames,Singers,HearNumber);
+        SmallPlaylistAdapter[] rank = {smallPlaylistAdapter};
+        //PlaylistAdapter(Context context, int[] seq, String[] songNames, String[] singers, String[] hearNumber){
+        PlaylistAdapter playlistAdapter = new PlaylistAdapter(this.getActivity().getBaseContext(), Sequences,SongNames,Singers,HearNumber);
+        ListView listRank = (ListView)view.findViewById(R.id.lv_rank);
+        listRank.setAdapter(playlistAdapter);
         return view;
     }
 

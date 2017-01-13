@@ -31,7 +31,7 @@ public class SmallPlaylistAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return 0;
+        return songNames.length;
     }
 
     @Override
@@ -51,12 +51,12 @@ public class SmallPlaylistAdapter extends BaseAdapter {
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             listView = inflater.inflate(R.layout.single_small_list,null);
-            TextView sequenceNumber = (TextView)listView.findViewById(R.id.small_list_image);
+            TextView sequenceNumber = (TextView)listView.findViewById(R.id.small_list_tv);
             TextView songName = (TextView)listView.findViewById(R.id.small_list_songname);
             TextView singer = (TextView)listView.findViewById(R.id.small_list_singer);
             TextView hearNumber = (TextView)listView.findViewById(R.id.small_list_hearnumber);
 
-            sequenceNumber.setText(sequences[position]);
+            sequenceNumber.setText(String.valueOf(sequences[position]));
             songName.setText(songNames[position]);
             singer.setText(singers[position]);
             hearNumber.setText(hearNumbers[position]);

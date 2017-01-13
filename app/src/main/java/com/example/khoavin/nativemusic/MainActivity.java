@@ -1,19 +1,12 @@
 package com.example.khoavin.nativemusic;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.MediaPlayer;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,15 +15,7 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
-import com.example.khoavin.nativemusic.DataObject.Song;
-import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
-import com.example.khoavin.nativemusic.ToolsFactory.EqualizerActivity;
-import com.example.khoavin.nativemusic.ToolsFactory.MusicService;
-import com.example.khoavin.nativemusic.ToolsFactory.MusicService.MusicBinder;
-import com.example.khoavin.nativemusic.ToolsFactory.RoundImage;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
-import java.util.ArrayList;
 
 import co.mobiwise.library.InteractivePlayerView;
 import co.mobiwise.library.OnActionClickedListener;
@@ -58,16 +43,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         viewPager.setAdapter(tabPagerAdapter);
         actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
-        //actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
+        actionBar.setDisplayShowTitleEnabled(false);
         this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
         //actionBar.hide();
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.background);
-        Bitmap blurBitmap = BlurBuilder.blur(bitmap,getBaseContext());
-        //view.setBackground(new BitmapDrawable(getResources(), bitmap));
-
         View view = this.getWindow().getDecorView();
-        view.setBackgroundDrawable(new BitmapDrawable(getResources(),bitmap));
-        actionBar.setStackedBackgroundDrawable(new BitmapDrawable(getResources(),bitmap));
+        //view.setBackgroundColor(getResources().getColor(R.color.background_color));
+        view.setBackgroundResource(R.drawable.gradient_background);
+
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         actionBar.addTab(actionBar.newTab().setText("HOME").setTabListener(this));
@@ -134,21 +117,21 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         });
         //endregion
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent it = new Intent(this, SettingActivity.class);
-            startActivity(it);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            Intent it = new Intent(this, SettingActivity.class);
+//            startActivity(it);
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     //region Tab Method
     @Override
@@ -169,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     //region Others Method
     @Override
     public void onAttachFragment(Fragment fragment){
+       System.out.println(fragment.getId());
     }
     private View.OnClickListener onShowListener() {
         return new View.OnClickListener() {
@@ -202,13 +186,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             @Override
             public void onPanelCollapsed(View view) {
 //                textView.setText("panel Collapse");
-                //actionBar.show();
+                actionBar.show();
             }
 
             @Override
             public void onPanelExpanded(View view) {
 //                textView.setText("panel expand");
-                //actionBar.hide();
+                actionBar.hide();
             }
 
             @Override
@@ -239,12 +223,12 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     //endregion
     //region Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
 
     //endregion
 }

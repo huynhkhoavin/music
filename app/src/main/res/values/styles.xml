@@ -11,7 +11,6 @@
         <item name="actionBarTabTextStyle">@style/tabcolor</item>
         <item name="android:windowActionBarOverlay">true</item>
 
-        <!--<item name="android:actionBarTabTextStyle">@style/tabcolor</item>-->
     </style>
 
     <style name="theme">
@@ -30,11 +29,11 @@
         <!--<item name="android:background">@drawable/actionbar_tab_bg</item>-->
         <item name="android:paddingLeft">32dp</item>
         <item name="android:paddingRight">32dp</item>
-        <item name="android:background">#ffa500</item>
+        <item name="android:background">#fff</item>
     </style>
 
     <style name="tabcolor" parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
-        <item name="android:textColor">@android:color/background_light</item>
+        <item name="android:textColor">@android:color/background_dark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
