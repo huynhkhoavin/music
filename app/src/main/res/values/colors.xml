@@ -6,4 +6,8 @@
     <color name="red">#fc1606</color>
     <color name="layout_white">#ffffff</color>
     <color name="titletextcolor">#fff</color>
+    <color name="white">#ffff</color>
+    <color name="borrow">#ddd</color>
+    <color name="small_text">#818181</color>
+    <color name="big_text">#060606</color>
 </resources>

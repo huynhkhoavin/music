@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="230dp"
+    android:weightSum="1"
+    android:elevation="2dp"
+    android:background="@drawable/border">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/model_female"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:layout_marginBottom="50dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds = "true"
+        android:id="@+id/video_image_parent" />
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:background="@android:drawable/stat_sys_headset"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="90k"
+            android:textColor="@color/white"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:id="@+id/video_listener_count_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Lạc Trôi"
+            android:textStyle="bold"
+            android:textColor="@color/big_text"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:id="@+id/video_name_parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="12sp"
+            android:text="Sơn Tùng MTP"
+            android:gravity="bottom"
+            android:textColor="@color/small_text"
+            android:id="@+id/video_singer_parent"/>
+
+    </LinearLayout>
+</RelativeLayout>
