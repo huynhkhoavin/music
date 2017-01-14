@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="1dp"
+    android:weightSum="1"
+    android:background="@drawable/layout_border">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/chude_cachmang"
+        android:scaleType="centerCrop"
+        android:id="@+id/topic_image"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="14sp"
+        android:textColor="@color/big_text"
+        android:text="Mừng Đảng Mừng Xuân"
+        android:id="@+id/topic_name"/>
+
+</LinearLayout>

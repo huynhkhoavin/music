@@ -1,5 +1,6 @@
 package com.example.khoavin.nativemusic.Tabs;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -13,8 +14,10 @@ import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.NormalPlayListAdapter;
 import com.example.khoavin.nativemusic.DataObject.NormalPlayList;
+import com.example.khoavin.nativemusic.PlaylistPlayerActivity;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
+import com.example.khoavin.nativemusic.VideoPlayerActivity;
 
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.PlaylistCollectionSource;
 
@@ -49,13 +52,17 @@ public class PlayListTab extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 NormalPlayList item = (NormalPlayList)parent.getItemAtPosition(position);
+
                 if(item != null)
                 {
-                    Toast.makeText(getContext(), item.getPlayListName(), Toast.LENGTH_LONG);
+                    Intent intent = new Intent(getActivity(), PlaylistPlayerActivity.class);
+                    intent.putExtra("PLAYLIST_IMAGE", item.getPlayListImage());
+                    intent.putExtra("PLAYLIST_LISTENER_COUNT", item.getListenerCount());
+                    startActivity(intent);
                 }
                 else
                 {
-                    Toast.makeText(getContext(), "null item found!", Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(), "No item found!", Toast.LENGTH_LONG);
                 }
             }
         });

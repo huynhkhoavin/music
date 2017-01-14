@@ -12,6 +12,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.khoavin.nativemusic.DataObject.SimpleSong;
 import com.example.khoavin.nativemusic.R;
 
 import static com.example.khoavin.nativemusic.R.id.imageView;
@@ -24,20 +25,15 @@ import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatLis
 
 public class ListSongAdapter extends BaseAdapter {
     private Context mContext;
-    private String[] songNames;
-    private int[] Images;
-    private String[] songSingers;
-    private long[] hearNumbers;
-    public ListSongAdapter(Context c,String[] names,int[] images, String[] songSingers, long[] hearNumbers){
+    private SimpleSong[] songSource;
+
+    public ListSongAdapter(Context c, SimpleSong[] songSource){
         mContext = c;
-        songNames = names;
-        this.songSingers = songSingers;
-        this.hearNumbers = hearNumbers;
-        Images = images;
+        this.songSource = songSource;
     }
     @Override
     public int getCount() {
-        return songNames.length;
+        return songSource.length;
     }
 
     @Override
@@ -92,10 +88,10 @@ public class ListSongAdapter extends BaseAdapter {
             }
         });
 
-        holder.singerImage.setImageResource(Images[position]);
-        holder.songName.setText(songNames[position]);
-        holder.songSinger.setText(songSingers[position]);
-        holder.hearNumber.setText(FormatListenerCount(hearNumbers[position]));
+        holder.singerImage.setImageResource(songSource[position].getImage());
+        holder.songName.setText(songSource[position].getName());
+        holder.songSinger.setText(songSource[position].getSinger());
+        holder.hearNumber.setText(FormatListenerCount(songSource[position].getListenerCount()));
 
         return listView;
     }

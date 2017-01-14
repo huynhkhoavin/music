@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
@@ -9,10 +10,10 @@
         android:layout_height="200dp">
 
         <ImageView
-            android:id="@+id/video_image"
+            android:id="@+id/playlist_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/nhac_dan_ca"
+            android:src="@drawable/nhac_dan_ca_5"
             android:scaleType="fitXY"/>
 
         <ImageView
@@ -29,7 +30,7 @@
             android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp">
 
             <ImageView
@@ -50,47 +51,45 @@
                 android:background="@drawable/icon_like"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:background="#66eeeeee"
-            android:layout_width="match_parent"
-            android:layout_height="27dp">
-        </LinearLayout>>
 
         <LinearLayout
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:layout_height="27dp"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/video_name"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Quê em chiều nước lũ"
-                android:textColor="@color/big_text"
-                android:textSize="13sp"
-                android:gravity="center"/>
-
             <ImageView
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@drawable/icon_listen"/>
+                android:background="@android:drawable/stat_sys_headset"/>
 
             <TextView
-                android:id="@+id/video_listener_count"
+                android:id="@+id/playlist_listener_count"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="950 K"
                 android:gravity="center"
-                android:textColor="@color/small_text"
-                android:textSize="12sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="12sp"
                 android:layout_marginLeft="7dp"/>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/playlist_current_play"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quê em chiều nước lũ"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"/>
 
     </RelativeLayout>
 
@@ -104,13 +103,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Liên Quan"
+            android:text="Bài hát"
             android:textStyle="bold"
             android:textColor="@color/nct"
             android:gravity="center"/>
 
     </RelativeLayout>
-
 
     <ListView
         android:layout_width="match_parent"
@@ -119,5 +117,5 @@
         android:layout_marginRight="5dp"
         android:divider="@drawable/divider"
         android:dividerHeight="1dp"
-        android:id="@+id/video_list_view_small" />
+        android:id="@+id/playlist_list_song" />
 </LinearLayout>

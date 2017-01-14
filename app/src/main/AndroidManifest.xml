@@ -32,6 +32,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ToolsFactory.EqualizerActivity" />
         <activity android:name=".VideoPlayerActivity" android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PlaylistPlayerActivity" android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

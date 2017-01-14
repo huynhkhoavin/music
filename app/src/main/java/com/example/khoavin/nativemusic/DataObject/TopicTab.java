@@ -1,4 +1,4 @@
-package com.example.khoavin.nativemusic.Tabs;
+package com.example.khoavin.nativemusic.DataObject;
 
 import android.content.Intent;
 import android.os.Bundle;
