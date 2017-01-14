@@ -48,21 +48,35 @@ public class GridViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View grid;
         grid = convertView;
+        ViewHolder holder = null;
+        
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid = inflater.inflate(R.layout.single_grid,null);
-            TextView textView = (TextView)grid.findViewById(R.id.grid_text);
-            ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
-            textView.setText(mWeb[position]);
-            //System.out.println(imageId[position]+" - - "+R.drawable.nhac_dan_ca);
+
+            holder = new ViewHolder();
+            holder.textView = (TextView)grid.findViewById(R.id.grid_text);
+            holder.imageView = (ImageView)grid.findViewById(R.id.grid_image);
+
+            grid.setTag(holder);
+        }
+        else{
+            holder = (ViewHolder)grid.getTag();
+        }
+
+        holder.textView.setText(mWeb[position]);
+        //System.out.println(imageId[position]+" - - "+R.drawable.nhac_dan_ca);
 //            Bitmap bitmap = BitmapFactory.decodeResource(grid.getResources(),imageId[position]);
 //            RoundImage roundImage = new RoundImage(bitmap);
 //            imageView.setImageDrawable(roundImage);
-            imageView.setImageResource(imageId[position]);
-        }
-        else{
-            grid = (View)convertView;
-        }
+        holder.imageView.setImageResource(imageId[position]);
+
         return grid;
+    }
+
+    private class ViewHolder
+    {
+        public TextView textView;
+        public ImageView imageView;
     }
 }

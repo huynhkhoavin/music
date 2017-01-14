@@ -43,23 +43,38 @@ public class NormalPlayListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View grid;
         grid = convertView;
+        ViewHolder holder = null;
+
+
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid = inflater.inflate(R.layout.single_playlist_no_details, parent, false);
 
-            TextView name = (TextView)grid.findViewById(R.id.playlist_name);
-            ImageView image = (ImageView)grid.findViewById(R.id.playlist_image);
-            TextView listenerCount = (TextView)grid.findViewById(R.id.playlist_listener_count);
-            TextView singer = (TextView)grid.findViewById(R.id.playlist_singer);
+            holder = new ViewHolder();
+            holder.name = (TextView)grid.findViewById(R.id.playlist_name);
+            holder.image = (ImageView)grid.findViewById(R.id.playlist_image);
+            holder.listenerCount = (TextView)grid.findViewById(R.id.playlist_listener_count);
+            holder.singer = (TextView)grid.findViewById(R.id.playlist_singer);
 
-            name.setText(mDataSource[position].getPlayListName());
-            image.setImageResource(mDataSource[position].getPlayListImage());
-            listenerCount.setText(FormatListenerCount(mDataSource[position].getListenerCount()));
-            singer.setText(mDataSource[position].getSingerName());
+            grid.setTag(holder);
         }
         else{
-            grid = (View)convertView;
+            holder = (ViewHolder)grid.getTag();
         }
+
+        holder.name.setText(mDataSource[position].getPlayListName());
+        holder.image.setImageResource(mDataSource[position].getPlayListImage());
+        holder.listenerCount.setText(FormatListenerCount(mDataSource[position].getListenerCount()));
+        holder.singer.setText(mDataSource[position].getSingerName());
+
         return grid;
+    }
+
+    private class ViewHolder
+    {
+        public TextView name;
+        public ImageView image;
+        public TextView listenerCount;
+        public TextView singer;
     }
 }

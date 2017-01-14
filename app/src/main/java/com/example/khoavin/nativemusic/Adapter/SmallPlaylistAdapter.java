@@ -1,6 +1,7 @@
 package com.example.khoavin.nativemusic.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,22 +49,38 @@ public class SmallPlaylistAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View listView;
         listView = convertView;
+
+        ViewHolder holder = null;
+
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             listView = inflater.inflate(R.layout.single_small_list,null);
-            TextView sequenceNumber = (TextView)listView.findViewById(R.id.small_list_tv);
-            TextView songName = (TextView)listView.findViewById(R.id.small_list_songname);
-            TextView singer = (TextView)listView.findViewById(R.id.small_list_singer);
-            TextView hearNumber = (TextView)listView.findViewById(R.id.small_list_hearnumber);
 
-            sequenceNumber.setText(String.valueOf(sequences[position]));
-            songName.setText(songNames[position]);
-            singer.setText(singers[position]);
-            hearNumber.setText(hearNumbers[position]);
+            holder = new ViewHolder();
+            holder.sequenceNumber = (TextView)listView.findViewById(R.id.small_list_tv);
+            holder.songName = (TextView)listView.findViewById(R.id.small_list_songname);
+            holder.singer = (TextView)listView.findViewById(R.id.small_list_singer);
+            holder.hearNumber = (TextView)listView.findViewById(R.id.small_list_hearnumber);
+
+            listView.setTag(holder);
         }
         else{
-            listView = (View)convertView;
+            holder = (ViewHolder)listView.getTag();
         }
+
+        holder.sequenceNumber.setText(String.valueOf(sequences[position]));
+        holder.songName.setText(songNames[position]);
+        holder.singer.setText(singers[position]);
+        holder.hearNumber.setText(hearNumbers[position]);
+
         return listView;
+    }
+
+    private class ViewHolder
+    {
+        public TextView sequenceNumber;
+        public TextView songName;
+        public TextView singer;
+        public TextView hearNumber;
     }
 }
