@@ -37,6 +37,7 @@ import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
 import com.example.khoavin.nativemusic.VideoPlayerActivity;
 
 import static android.view.View.VISIBLE;
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.VideoCollectionSource;
 
 /**
  * Created by OatOal on 12/1/2016.
@@ -45,20 +46,7 @@ import static android.view.View.VISIBLE;
 public class VideoTab extends Fragment {
     ListView listView;
 
-    Video[] videoSource = {
-            new Video("Cơn mưa ngang qua", "Sơn Tùng MTP", "", 65239000, R.drawable.video_1),
-            new Video("Dấu mưa", "Trung Quân Idol", "", 65000, R.drawable.video_2),
-            new Video("Sai càng sai", "Chi Dân", "", 32000, R.drawable.video_3),
-            new Video("Duyên nghèo", "Mạnh Quỳnh - Phi Nhung", "", 44000, R.drawable.video_4),
-            new Video("Ru lại câu hò", "Cẩm Ly", "", 350000, R.drawable.video_5),
-            new Video("Căn nhà màu tím", "Mạnh Quỳnh - Phi Nhung", "", 116000, R.drawable.video_6),
-            new Video("Áo hoa", "Quang Lê - Mai Thiên Vân", "", 83000, R.drawable.video_1),
-            new Video("Chuyện tình Lan và Điệp", "Tui Chịu", "", 74000, R.drawable.video_2),
-            new Video("Khúc thụy du", "Khánh Ly", "", 999, R.drawable.video_3),
-            new Video("Xuân tha hương lạc xứ", "Trường Vũ", "", 325, R.drawable.video_4),
-            new Video("Lạc trôi", "Sơn Tùng MTP", "", 999000, R.drawable.video_5),
-            new Video("Em của ngày hôm qua", "Sơn Tùng MTP", "", 725000, R.drawable.video_6)
-    };
+    Video[] videoSource;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,6 +54,7 @@ public class VideoTab extends Fragment {
 
         listView = (ListView) view.findViewById(R.id.video_list_view_parent);
 
+        videoSource = VideoCollectionSource;
         ListVideoAdapter adapter = new ListVideoAdapter(getActivity().getBaseContext(), videoSource);
         listView.setAdapter(adapter);
 
@@ -73,11 +62,22 @@ public class VideoTab extends Fragment {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object item = parent.getItemAtPosition(position);
+                Video item = (Video) parent.getItemAtPosition(position);
 
-                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
-                intent.putExtra("NewIntentMessage", "this is a test message!");
-                startActivity(intent);
+                if(item != null)
+                {
+                    Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+                    intent.putExtra("VIDEO_NAME", item.GetName());
+                    intent.putExtra("VIDEO_IMAGE", item.GetVideoImage());
+                    intent.putExtra("VIDEO_LISTENER_COUNT", item.GetListenerCount());
+                    intent.putExtra("VIDEO_SINGER", item.GetSinger());
+
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(getContext(), "No item found!", Toast.LENGTH_LONG);
+                }
             }
         });
 
