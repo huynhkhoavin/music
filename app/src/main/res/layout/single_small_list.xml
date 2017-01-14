@@ -16,27 +16,12 @@
         android:gravity="center"
         android:layout_height="60dp" />
 
-    <RelativeLayout
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="243dp"
-android:layout_marginLeft="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_height="match_parent"
         android:layout_weight="1.03">
-
-        <Button
-            android:layout_height="20dp"
-            android:id="@+id/button"
-            android:padding="10dp"
-            android:background="@drawable/three_dots_button"
-            android:gravity="center_vertical|center_horizontal|end"
-            android:layout_width="20dp"
-            android:layout_marginRight="10dp"
-            android:elevation="8dp"
-            android:visibility="invisible"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
         <TextView
             android:text="Lạc Trôi"
             android:layout_width="match_parent"
@@ -51,43 +36,49 @@ android:layout_marginLeft="5dp"
             android:layout_alignParentEnd="true" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Sơn Tùng M-TP"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/small_list_singer"
+                android:textSize="10dp" />
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                app:srcCompat="@drawable/nhaccuatui"
+                android:id="@+id/imageView3"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100k"
+                android:gravity="center_vertical"
+                android:textSize="8dp"
+                android:id="@+id/small_list_hearnumber"
+                />
 
         </LinearLayout>
 
-        <TextView
-            android:text="Sơn Tùng M-TP"
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/small_list_singer"
-            android:textSize="10dp"
-            android:layout_weight="1"
-            android:layout_alignBaseline="@+id/button"
-            android:layout_alignBottom="@+id/button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+    </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="100k"
-            android:gravity="center_vertical"
-            android:textSize="8dp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/small_list_hearnumber"
-            android:layout_marginStart="15dp"
-            android:layout_alignBaseline="@+id/small_list_singer"
-            android:layout_alignBottom="@+id/small_list_singer"
-            android:layout_toRightOf="@+id/small_list_singer"
-            android:layout_toEndOf="@+id/small_list_singer" />
+    <Button
+        android:layout_width="25dp"
+        android:id="@+id/button2"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="20dp"
 
 
-    </RelativeLayout>
-
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@drawable/button_triangle_list_normal"
+        android:layout_height="25dp" />
 </LinearLayout>
