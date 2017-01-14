@@ -29,13 +29,6 @@ android {
         renderscriptSupportModeEnabled true
 
     }
-    defaultConfig {
-        applicationId "com.cjj.jjsearchviewanim"
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-    }
 }
 dependencies {
     compile 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.0'

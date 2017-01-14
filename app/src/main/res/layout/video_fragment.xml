@@ -10,7 +10,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="70dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10dp"
+        android:divider="@drawable/divider"
+        android:dividerHeight="1dp"
         android:id="@+id/video_list_view_parent" />
 </LinearLayout>
