@@ -13,17 +13,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.ListView;
 
+import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
+import com.example.khoavin.nativemusic.DataObject.SimpleSong;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import co.mobiwise.library.InteractivePlayerView;
 import co.mobiwise.library.OnActionClickedListener;
 
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.SongCollectionSource;
+
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener,OnActionClickedListener {
     //region VIEWPAGER+ACTIONBAR
     private ViewPager viewPager;
     private TabPagerAdapter tabPagerAdapter;
+    SimpleSong[] collectionSource = SongCollectionSource;
     private ActionBar actionBar;
     private String[] tabName = {"First","Second","Third"};
     //endregion
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setListAdded();
         //region ACTION BAR
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
@@ -193,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             public void onPanelExpanded(View view) {
 //                textView.setText("panel expand");
                 actionBar.hide();
+
             }
 
             @Override
@@ -230,5 +238,17 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 //        return true;
 //    }
 
+    //endregion
+    //region Animation
+    public void play_move_up(View view){
+
+    }
+    //endregion
+    //region ListView
+public void setListAdded(){
+    ListSongAdapter listSongAdapter = new ListSongAdapter(getBaseContext(),collectionSource);
+    ListView listView = (ListView)findViewById(R.id.lastest_added_lv);
+    listView.setAdapter(listSongAdapter);
+}
     //endregion
 }

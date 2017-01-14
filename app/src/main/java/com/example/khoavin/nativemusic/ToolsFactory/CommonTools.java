@@ -81,13 +81,13 @@ public  class CommonTools {
     public static SimpleSong[] SongCollectionSource = new SimpleSong[]
             {
                     new SimpleSong("Hương Lúa Mạ Non", R.drawable.quang_le, 10000, "Quang Lê"),
-                    new SimpleSong("Chân Tình", R.drawable.quang_le, 4634, "Cẩm Ly"),
-                    new SimpleSong("Hào Hoa", R.drawable.quang_le, 64864, "Quang Dũng"),
-                    new SimpleSong("Cha Chồng Nàng Dâu", R.drawable.quang_le, 787876, "Vĩnh Thuyên Kim"),
-                    new SimpleSong("Xuân Này Con Không Về", R.drawable.quang_le, 684684, "Nhật Kim Anh"),
-                    new SimpleSong("Gọi Đò", R.drawable.quang_le, 486463, "Đan Nguyên"),
-                    new SimpleSong( "Đồi Hoa Sim", R.drawable.quang_le, 2428,  "Dương Ngọc Thái"),
-                    new SimpleSong("Căn Nhà Ngoại Ô", R.drawable.quang_le, 6787, "Trường Vũ"),
+                    new SimpleSong("Chân Tình", R.drawable.nhac_dan_ca, 4634, "Cẩm Ly"),
+                    new SimpleSong("Anh Còn Nợ Em", R.drawable.quang_dung, 64864, "Quang Dũng"),
+                    new SimpleSong("Cha Chồng Nàng Dâu", R.drawable.vinh_thuyen_kim, 787876, "Vĩnh Thuyên Kim"),
+                    new SimpleSong("Xuân Này Con Không Về", R.drawable.nhat_kim_anh, 684684, "Nhật Kim Anh"),
+                    new SimpleSong("Gọi Đò", R.drawable.dan_nguyen, 486463, "Đan Nguyên"),
+                    new SimpleSong( "Đồi Hoa Sim", R.drawable.duong_ngoc_thai, 2428,  "Dương Ngọc Thái"),
+                    new SimpleSong("Căn Nhà Ngoại Ô", R.drawable.truong_vu, 6787, "Trường Vũ"),
             };
 
 //    int[] songImage = {

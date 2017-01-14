@@ -48,7 +48,7 @@ public class SongTab extends Fragment {
                 Toast.makeText(getActivity(), "You Clicked at " +collectionSource[+ position].getName(), Toast.LENGTH_SHORT).show();
             }
         });
-        listView = (ListView) view.findViewById(R.id.horizontal_listview);
+//        listView = (ListView) view.findViewById(R.id.horizontal_listview);
         //endregion
         return view;
     }

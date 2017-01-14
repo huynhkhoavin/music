@@ -73,7 +73,7 @@
 
     <Button
         android:layout_width="25dp"
-        android:id="@+id/button2"
+        android:id="@+id/btn_three_dots"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="20dp"
 

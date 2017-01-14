@@ -106,7 +106,6 @@ public class HomeTab extends Fragment {
                 popupMenu.show();//showing popup menu
             }
         });
-        listView = (ListView) view.findViewById(R.id.horizontal_listview);
         //endregion
 
         //endregion

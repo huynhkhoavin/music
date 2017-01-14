@@ -2,13 +2,17 @@ package com.example.khoavin.nativemusic.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.R;
 
@@ -68,7 +72,7 @@ public class PlaylistAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, final View convertView, ViewGroup parent) {
         View listView;
         listView = convertView;
 
@@ -76,6 +80,24 @@ public class PlaylistAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if (position==0){
                 listView = inflater.inflate(R.layout.header_small_list,parent,false);
+                Button three_dots = (Button)listView.findViewById(R.id.btn_three_dots);
+                three_dots.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        PopupMenu popupMenu = new PopupMenu(v.getContext(),v);
+                        popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                Toast.makeText(v.getContext(),"Popup : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+                                return true;
+                            }
+                        });
+                        popupMenu.show();//showing popup menu
+                    }
+                });
             }
             else {
                 listView = inflater.inflate(R.layout.single_small_list,parent,false);
@@ -88,6 +110,24 @@ public class PlaylistAdapter extends BaseAdapter {
                 songName.setText(songNames[position-1]);
                 singer.setText(singers[position-1]);
                 hearNumber.setText(FormatListenerCount(hearNumbers[position-1]));
+                Button three_dots = (Button)listView.findViewById(R.id.btn_three_dots);
+                three_dots.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View v) {
+                        PopupMenu popupMenu = new PopupMenu(v.getContext(),v);
+                        popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                Toast.makeText(v.getContext(),"Popup : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+                                return true;
+                            }
+                        });
+                        popupMenu.show();//showing popup menu
+                    }
+                });
             }
         }
         else{

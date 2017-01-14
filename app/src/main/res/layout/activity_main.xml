@@ -35,6 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
+
             sothree:umanoDragView="@+id/dragView"
             sothree:umanoOverlay="true"
             sothree:umanoPanelHeight="60dp"
@@ -42,17 +43,29 @@
             sothree:umanoShadowHeight="8dp">
 
             <!-- MAIN CONTENT -->
-            <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/viewPager"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                >
-            </android.support.v4.view.ViewPager>
+                android:orientation="vertical">
+                <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                </android.support.v4.view.ViewPager>
+                <android.support.v7.widget.SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true">
+                </android.support.v7.widget.SearchView>
+            </LinearLayout>
+
             <!-- SLIDING LAYOUT -->
             <RelativeLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/relativeLayout"
+                android:elevation="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -70,8 +83,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    android:text="Music Title"
+                    android:layout_marginTop="10dp"
+                    android:text="Anh Còn Nợ Em"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -82,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/musicTitle"
                     android:layout_centerHorizontal="true"
-                    android:text="Singer Name - Artist Here"
+                    android:text="Quang Dũng"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
 
@@ -131,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:layout_alignParentBottom="true"
-                    android:background="#262626">
+                    android:background="#FFF">
 
                     <TextView
                         android:id="@+id/latestAddedSongTitle"
@@ -139,8 +152,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
-                        android:text="Latest Added"
-                        android:textColor="#EEEEEE"
+                        android:text="THÊM GẦN ĐÂY"
+
+                        android:textColor="#000"
                         android:textSize="18sp" />
 
                     <View
@@ -148,160 +162,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="1.5dp"
                         android:layout_below="@+id/latestAddedSongTitle"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
                         android:layout_marginTop="10dp"
-                        android:background="#80fafafa" />
+                        android:background="@drawable/layout_border"/>
 
                     <ScrollView
                         android:id="@+id/scrollView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/view1">
-
                         <RelativeLayout
                             android:id="@+id/relativeLayout1"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp">
-
-                            <LinearLayout
-                                android:id="@+id/music1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/model_female" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:lines="1"
-                                        android:text="Same Old Love - Selena Gomez"
-                                        android:textColor="#ddd"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="7dp"
-                                        android:text="Selena Gomez . 4:24"
-                                        android:textColor="#ddd"
-                                        android:textSize="12sp" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <View
-                                android:id="@+id/line1"
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_below="@+id/music1"
-                                android:layout_marginTop="10dp"
-                                android:background="#20ffffff" />
-
-                            <LinearLayout
-                                android:id="@+id/music2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/line1"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/model_female" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:lines="1"
-                                        android:text="Same Old Love - Selena Gomez"
-                                        android:textColor="#ddd"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="7dp"
-                                        android:text="Selena Gomez . 4:24"
-                                        android:textColor="#ddd"
-                                        android:textSize="12sp" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <View
-                                android:id="@+id/line2"
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_below="@+id/music2"
-                                android:layout_marginTop="10dp"
-                                android:background="#20ffffff" />
-
-                            <LinearLayout
-                                android:id="@+id/music3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/line2"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/model_female" />
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="5dp"
-                                        android:lines="1"
-                                        android:text="Same Old Love - Selena Gomez"
-                                        android:textColor="#ddd"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="7dp"
-                                        android:text="Selena Gomez . 4:24"
-                                        android:textColor="#ddd"
-                                        android:textSize="12sp" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_below="@+id/music3"
-                                android:layout_marginTop="10dp"
-                                android:background="#20ffffff" />
+                            android:layout_height="match_parent"
+                            >
+                        <ListView
+                            android:id="@+id/lastest_added_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp">
+                        </ListView>
                         </RelativeLayout>
                     </ScrollView>
                 </RelativeLayout>
