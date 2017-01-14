@@ -15,6 +15,7 @@ import com.example.khoavin.nativemusic.Adapter.TopicAdapter;
 import com.example.khoavin.nativemusic.DataObject.Topic;
 import com.example.khoavin.nativemusic.DataObject.Video;
 import com.example.khoavin.nativemusic.R;
+import com.example.khoavin.nativemusic.TopicDetailsActivity;
 import com.example.khoavin.nativemusic.VideoPlayerActivity;
 
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.TopicCollectionSource;
@@ -47,16 +48,14 @@ public class TopicTab extends Fragment {
 
                 if(item != null)
                 {
-//                    Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
-//                    intent.putExtra("TOPIC_NAME", item.getName());
-//                    intent.putExtra("TOPIC_IMAGE", item.getImage());
-//                    startActivity(intent);
+                    Intent intent = new Intent(getActivity(), TopicDetailsActivity.class);
+                    startActivity(intent);
 
-                    Toast.makeText(getContext(), "item found!", Toast.LENGTH_LONG);
+                    //getFragmentManager().beginTransaction().replace(R.id.main_layout, new PlayListTab()).addToBackStack(null).commit();
                 }
                 else
                 {
-                    Toast.makeText(getContext(), "No item found!", Toast.LENGTH_LONG);
+
                 }
             }
         });
