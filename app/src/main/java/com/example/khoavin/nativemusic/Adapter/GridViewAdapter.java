@@ -49,7 +49,7 @@ public class GridViewAdapter extends BaseAdapter {
         View grid;
         grid = convertView;
         ViewHolder holder = null;
-        
+
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             grid = inflater.inflate(R.layout.single_grid,null);

@@ -72,16 +72,16 @@ public class SongTab extends Fragment {
         "Tuấn Vũ",
         "Trường Vũ"
     };
-    String[] hearNumbers = {
-            "10k",
-            "9k",
-            "8k",
-            "5k",
-            "3k",
-            "2k",
-            "1k",
-            "500",
-            "400"
+    long[] hearNumbers = {
+            10000,
+            9000,
+            7000,
+            735000,
+            78000000,
+            3652014,
+            2152026,
+            548922,
+            447656
     };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

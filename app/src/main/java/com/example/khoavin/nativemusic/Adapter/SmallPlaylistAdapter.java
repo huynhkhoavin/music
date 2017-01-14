@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.example.khoavin.nativemusic.R;
 
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatListenerCount;
+
 /**
  * Created by KhoaVin on 12/01/2017.
  */
@@ -22,8 +24,8 @@ public class SmallPlaylistAdapter extends BaseAdapter {
     int[] backgrounds;
     String[] songNames;
     String[] singers;
-    String[] hearNumbers;
-    public SmallPlaylistAdapter(Context context, int[] seq, String[] songNames, String[] singers, String[] hearNumber){
+    long[] hearNumbers;
+    public SmallPlaylistAdapter(Context context, int[] seq, String[] songNames, String[] singers, long[] hearNumber){
         this.context = context;
         this.sequences = seq;
         this.songNames = songNames;
@@ -71,7 +73,7 @@ public class SmallPlaylistAdapter extends BaseAdapter {
         holder.sequenceNumber.setText(String.valueOf(sequences[position]));
         holder.songName.setText(songNames[position]);
         holder.singer.setText(singers[position]);
-        holder.hearNumber.setText(hearNumbers[position]);
+        holder.hearNumber.setText(FormatListenerCount(hearNumbers[position]));
 
         return listView;
     }

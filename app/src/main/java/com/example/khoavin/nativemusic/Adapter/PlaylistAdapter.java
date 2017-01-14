@@ -14,6 +14,8 @@ import com.example.khoavin.nativemusic.R;
 
 import java.util.List;
 
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatListenerCount;
+
 /**
  * Created by KhoaVin on 12/01/2017.
  */
@@ -26,8 +28,8 @@ public class PlaylistAdapter extends BaseAdapter {
     int[] backgrounds;
     String[] songNames;
     String[] singers;
-    String[] hearNumbers;
-    public PlaylistAdapter(Context context, int[] seq, String[] songNames, String[] singers, String[] hearNumber){
+    long[] hearNumbers;
+    public PlaylistAdapter(Context context, int[] seq, String[] songNames, String[] singers, long[] hearNumber){
         this.context = context;
         this.sequences = seq;
         this.songNames = songNames;
@@ -85,7 +87,7 @@ public class PlaylistAdapter extends BaseAdapter {
                 sequenceNumber.setText("0"+String.valueOf(sequences[position-1]));
                 songName.setText(songNames[position-1]);
                 singer.setText(singers[position-1]);
-                hearNumber.setText(hearNumbers[position-1]);
+                hearNumber.setText(FormatListenerCount(hearNumbers[position-1]));
             }
         }
         else{

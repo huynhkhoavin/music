@@ -30,7 +30,7 @@ public class RankTab extends Fragment {
     int[] Sequences = {2,3,4,5,6,7,8,9};
     String[] SongNames = {"Đi Về Đâu","Lạc Nhau Có Phải Muôn Đời", "Phía Sau Một Cô Gái", "Cho Em Gần Anh Thêm Chút Nữa", "Con Tim Tan Vỡ", "Vỡ Tan","Đi Để Trở Về"};;
     String[] Singers = {"Tiên Tiên", "Errik ST.319", "Soobin Hoàng Sơn", "Hương Tràm","Phan Mạnh Quỳnh","Trịnh Thăng Bình","Soobin Hoàng Sơn"};
-    String[] HearNumber = {"5k","4.3k","4.1k","5k","4.3k","4.1k","5k","4.3k"};
+    long[] HearNumber = {584626,784548,968541784,781418,32654,87664,639656,862447};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
