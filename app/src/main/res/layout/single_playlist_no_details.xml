@@ -48,7 +48,7 @@
                 android:id="@+id/playlist_listener_count"/>
         </LinearLayout>
 
-        <Button
+        <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/play_details"
