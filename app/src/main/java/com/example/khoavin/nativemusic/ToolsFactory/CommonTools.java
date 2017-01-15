@@ -1,5 +1,6 @@
 package com.example.khoavin.nativemusic.ToolsFactory;
 
+import com.example.khoavin.nativemusic.DataObject.Artist;
 import com.example.khoavin.nativemusic.DataObject.KindOfMusic;
 import com.example.khoavin.nativemusic.DataObject.NormalPlayList;
 import com.example.khoavin.nativemusic.DataObject.SimpleSong;
@@ -66,7 +67,6 @@ public  class CommonTools {
                     new NormalPlayList("Hoàng Lão Tà", R.drawable.nhac_dan_ca_3, "", 325000, "Đàn chỉ thần công"),
                     new NormalPlayList("Tây Độc", R.drawable.nhac_dan_ca_4, "", 325000, "Âu Dương Phong")
             };
-
     public static Topic[] TopicCollectionSource = new Topic[]
             {
                     new Topic("Mừng Đảng mừng xuân", R.drawable.chude_cachmang),
@@ -112,5 +112,71 @@ public  class CommonTools {
                     new KindOfMusic("Trử tình", NHAC_TRU_TINH),
                     new KindOfMusic("Nhã nhạc", NHA_NHAC),
                     new KindOfMusic("Nhạc chế", NHAC_CHE),
+            };
+
+    public static Topic[] MainmenuTopicCollectionSource = new Topic[]
+            {
+                    new Topic("Mừng Đảng mừng xuân", R.drawable.chude_cachmang),
+                    new Topic("Cải lương", R.drawable.chude_cailuong),
+                    new Topic("Nhạc hải ngoại", R.drawable.chude_haingoai),
+                    new Topic("Tân cổ giao duyên", R.drawable.chude_tanco),
+                    new Topic("Mừng xuân Đinh Dậu", R.drawable.chude_tetviet),
+                    new Topic("Thư giản", R.drawable.chude_thugian),
+            };
+
+
+    public static Video[] MainmenuVideoCollectionSource = new Video[]{
+            new Video("Dấu mưa", "Trung Quân Idol", "", 65000, R.drawable.video_2),
+            new Video("Duyên nghèo", "Mạnh Quỳnh - Phi Nhung", "", 44000, R.drawable.video_4),
+            new Video("Ru lại câu hò", "Cẩm Ly", "", 350000, R.drawable.video_5),
+            new Video("Áo hoa", "Quang Lê - Mai Thiên Vân", "", 83000, R.drawable.video_1),
+    };
+
+    public  static NormalPlayList[] MainmenuAlbumCollectionSource = new NormalPlayList[]
+            {
+                    new NormalPlayList("Cẩm Ly", R.drawable.nhac_dan_ca_1, "", 325000, "Em gái quê"),
+                    new NormalPlayList("Quang Dũng", R.drawable.nhac_dan_ca_2, "", 325000, "Dũng kẹo"),
+                    new NormalPlayList("Đàm Vĩnh Hưng", R.drawable.nhac_dan_ca_3, "", 325000, "Đêm lang thang"),
+                    new NormalPlayList("Đan Trường", R.drawable.nhac_dan_ca_4, "", 325000, "Mãi mãi một tình yêu"),
+                    new NormalPlayList("Hồ Ngọc Hà", R.drawable.nhac_dan_ca_5, "", 325000, "Qua con mê"),
+                    new NormalPlayList("Duy Mạnh", R.drawable.nhac_dan_ca_6, "", 325000, "Thánh tru"),
+                    new NormalPlayList("Chó Phước Thịnh", R.drawable.nhac_dan_ca_7, "", 325000, "Gâu Gâu Gâu"),
+                    new NormalPlayList("Sơn Tùng MTP", R.drawable.nhac_dan_ca_8, "", 325000, "Lạc trôi"),
+                    new NormalPlayList("Bảo Thy", R.drawable.nhac_dan_ca_1, "", 325000, "Ngôi nhà hoa hồng")
+            };
+
+    public static SimpleSong[] MainmenuSongCollectionSource = new SimpleSong[]
+            {
+                    new SimpleSong("Hương Lúa Mạ Non", R.drawable.quang_le, 10000, "Quang Lê"),
+                    new SimpleSong("Chân Tình", R.drawable.nhac_dan_ca, 4634, "Cẩm Ly"),
+                    new SimpleSong("Cha Chồng Nàng Dâu", R.drawable.vinh_thuyen_kim, 787876, "Vĩnh Thuyên Kim"),
+                    new SimpleSong("Xuân Này Con Không Về", R.drawable.nhat_kim_anh, 684684, "Nhật Kim Anh"),
+                    new SimpleSong("Gọi Đò", R.drawable.dan_nguyen, 486463, "Đan Nguyên"),
+                    new SimpleSong( "Đồi Hoa Sim", R.drawable.duong_ngoc_thai, 2428,  "Dương Ngọc Thái"),
+            };
+
+    public static Artist[] ArtistCollectionSource = new Artist[]
+            {
+                    new Artist("Sơn Tùng MTP", R.drawable.ca_si_son_tung),
+                    new Artist("Quang Lê", R.drawable.quang_le),
+                    new Artist("Bằng Kiều", R.drawable.ca_si_bang_kieu),
+                    new Artist("Cẩm Ly", R.drawable.ca_si_cam_ly),
+                    new Artist("Đàm Vĩnh Hưng", R.drawable.ca_si_dam_vinh_hung),
+                    new Artist("Đan Trường", R.drawable.ca_si_dan_truong),
+                    new Artist("Đông Nhi", R.drawable.ca_si_dong_nhi),
+                    new Artist("Hồ Ngọc Hà", R.drawable.ca_si_ho_ngoc_ha),
+                    new Artist("Hồ Quang Hiếu", R.drawable.ca_si_ho_quang_hieu),
+                    new Artist("Hoàng Thùy Linh", R.drawable.ca_si_hoang_thuy_linh),
+                    new Artist("Khởi My", R.drawable.ca_si_khoi_my),
+                    new Artist("Lam Trường", R.drawable.ca_si_lam_truong),
+                    new Artist("Lệ Quyên", R.drawable.ca_si_le_quyen),
+                    new Artist("Minh Hằng", R.drawable.ca_si_minh_hang),
+                    new Artist("Mỹ Linh", R.drawable.ca_si_my_linh),
+                    new Artist("Mỹ Tâm", R.drawable.ca_si_my_tam),
+                    new Artist("Noo Phước Thịnh", R.drawable.ca_si_noo),
+                    new Artist("Quang Dũng", R.drawable.quang_dung),
+                    new Artist("Quang Vinh", R.drawable.ca_si_quang_vinh),
+                    new Artist("Thủy Tiên", R.drawable.ca_si_thuy_tien),
+
             };
 }

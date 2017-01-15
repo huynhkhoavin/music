@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:alpha="80"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:background="@drawable/fragment_background"
     android:orientation="vertical">
     <android.support.v7.widget.SearchView
@@ -10,43 +12,140 @@
         android:layout_height="40dp"
         android:clickable="true">
     </android.support.v7.widget.SearchView>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="476dp">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
+            <ViewFlipper
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/viewFlipper">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chude_cachmang"/>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView2"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chude_cailuong"/>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView3"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chude_dance"/>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView4"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chude_haingoai"/>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chude_tetviet"/>
+
+            </ViewFlipper>
+
             <TextView
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="ALBUM NỔI BẬT"
                 android:gravity="center_vertical"
+                android:textStyle="bold"
                 android:layout_height="40dp" />
             <GridView
-                android:id="@+id/grid_view"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/album_grid"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="375dp"
                 android:gravity="center"
                 android:horizontalSpacing="5dp"
+                android:verticalSpacing="5dp"
                 android:focusable="false"
                 android:numColumns="3"
                 android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                ></GridView>
+                android:paddingRight="5dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="VIDEO NỔI BẬT"
+                android:textStyle="bold"
                 android:layout_height="wrap_content" />
+
             <GridView
-                android:id="@+id/grid_view2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/video_grid"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="260dp"
                 android:gravity="center"
-                android:horizontalSpacing="10dp"
+                android:horizontalSpacing="5dp"
                 android:focusable="false"
                 android:numColumns="2"
-                android:verticalSpacing="10dp"></GridView>
+                android:verticalSpacing="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:text="CHỦ ĐỀ NỔI BẬT"
+                android:layout_height="wrap_content" />
+
+            <GridView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/topic_grid"
+                android:layout_width="match_parent"
+                android:layout_height="295dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:focusable="false"
+                android:numColumns="2"
+                android:verticalSpacing="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:text="BÀI HÁT NỔI BẬT"
+                android:layout_height="wrap_content" />
+
+            <GridView
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:id="@+id/song_grid"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:focusable="false"
+                android:numColumns="1"
+                android:verticalSpacing="5dp"/>
 
         </LinearLayout>
     </ScrollView>
