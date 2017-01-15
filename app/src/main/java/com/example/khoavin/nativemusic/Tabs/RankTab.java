@@ -6,7 +6,9 @@ import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.PlaylistAdapter;
 import com.example.khoavin.nativemusic.R;
@@ -30,6 +32,12 @@ public class RankTab extends Fragment {
         PlaylistAdapter playlistAdapter = new PlaylistAdapter(this.getActivity().getBaseContext(), Sequences,SongNames,Singers,HearNumber);
         ListView listRank = (ListView)view.findViewById(R.id.lv_rank);
         listRank.setAdapter(playlistAdapter);
+        listRank.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(),"OOO"+position,Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
 

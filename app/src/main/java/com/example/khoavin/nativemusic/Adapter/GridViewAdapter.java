@@ -1,20 +1,17 @@
 package com.example.khoavin.nativemusic.Adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.khoavin.nativemusic.R;
-import com.example.khoavin.nativemusic.ToolsFactory.RoundImage;
 
-import org.w3c.dom.Text;
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatListenerCount;
 
 /**
  * Created by KhoaVin on 17/12/2016.
@@ -22,16 +19,18 @@ import org.w3c.dom.Text;
 
 public class GridViewAdapter extends BaseAdapter {
     private Context mContext;
-    private String[] mWeb;
-    private int[] imageId;
-    public GridViewAdapter(Context c,String[] webs,int[] images){
+    private int[] listImages;
+    private String[] listSongNames;
+    private String[] listSingerNames;
+    public GridViewAdapter(Context c,int[] listImage,String[] listSongName, String[] listSingerName){
         mContext = c;
-        mWeb = webs;
-        imageId = images;
+        this.listImages = listImage;
+        this.listSongNames = listSongName;
+        this.listSingerNames = listSingerName;
     }
     @Override
     public int getCount() {
-        return mWeb.length;
+        return listImages.length;
     }
 
     @Override
@@ -41,42 +40,39 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View grid;
         grid = convertView;
-        ViewHolder holder = null;
-
+        GridViewAdapter.ViewHolder holder = null;
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            grid = inflater.inflate(R.layout.single_grid,null);
+            grid = inflater.inflate(R.layout.single_grid,parent,false);
 
-            holder = new ViewHolder();
-            holder.textView = (TextView)grid.findViewById(R.id.grid_text);
-            holder.imageView = (ImageView)grid.findViewById(R.id.grid_image);
+            holder = new GridViewAdapter.ViewHolder();
+            holder.image = (LinearLayout) grid.findViewById(R.id.linear_layout);
+            holder.songName= (TextView)grid.findViewById(R.id.grid_songname);
+            holder.singerName = (TextView)grid.findViewById(R.id.grid_singername);
 
             grid.setTag(holder);
         }
         else{
-            holder = (ViewHolder)grid.getTag();
+            holder = (GridViewAdapter.ViewHolder)grid.getTag();
         }
 
-        holder.textView.setText(mWeb[position]);
-        //System.out.println(imageId[position]+" - - "+R.drawable.nhac_dan_ca);
-//            Bitmap bitmap = BitmapFactory.decodeResource(grid.getResources(),imageId[position]);
-//            RoundImage roundImage = new RoundImage(bitmap);
-//            imageView.setImageDrawable(roundImage);
-        holder.imageView.setImageResource(imageId[position]);
-
+        holder.image.setBackgroundResource(listImages[position]);
+        holder.songName.setText(listSongNames[position]);
+        holder.singerName.setText(listSingerNames[position]);
         return grid;
     }
 
     private class ViewHolder
     {
-        public TextView textView;
-        public ImageView imageView;
+        public LinearLayout image;
+        public TextView songName;
+        public TextView singerName;
     }
 }

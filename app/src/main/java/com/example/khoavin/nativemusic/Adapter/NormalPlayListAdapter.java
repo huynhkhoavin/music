@@ -52,7 +52,7 @@ public class NormalPlayListAdapter extends BaseAdapter {
 
             holder = new ViewHolder();
             holder.name = (TextView)grid.findViewById(R.id.playlist_name);
-            holder.image = (ImageView)grid.findViewById(R.id.playlist_image);
+            holder.image = (ImageView)grid.findViewById(R.id.grid_image);
             holder.listenerCount = (TextView)grid.findViewById(R.id.playlist_listener_count);
             holder.singer = (TextView)grid.findViewById(R.id.playlist_singer);
 
