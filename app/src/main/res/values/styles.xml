@@ -29,11 +29,11 @@
         <!--<item name="android:background">@drawable/actionbar_tab_bg</item>-->
         <item name="android:paddingLeft">32dp</item>
         <item name="android:paddingRight">32dp</item>
-        <item name="android:background">#fff</item>
+        <item name="android:background">#EE7600</item>
     </style>
 
     <style name="tabcolor" parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
-        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

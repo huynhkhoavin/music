@@ -106,7 +106,7 @@
             android:layout_height="match_parent"
             android:text="Liên Quan"
             android:textStyle="bold"
-            android:textColor="@color/nct"
+            android:textColor="@color/colorAccent"
             android:gravity="center"/>
 
     </RelativeLayout>

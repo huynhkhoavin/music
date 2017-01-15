@@ -20,7 +20,7 @@
             android:background="@drawable/btn_orange"
             android:layout_width="90dp"
             android:layout_height="30dp"
-            android:text="Nổi bậc"
+            android:text="Nổi bật"
             android:textSize="13sp"
             android:gravity="center"
             android:textColor="@color/big_text"

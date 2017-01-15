@@ -69,7 +69,8 @@
                 android:text="ALBUM NỔI BẬT"
                 android:gravity="center_vertical"
                 android:textStyle="bold"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:textColor="@color/colorAccent" />
             <GridView
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
@@ -91,7 +92,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="VIDEO NỔI BẬT"
                 android:textStyle="bold"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent" />
 
             <GridView
                 android:layout_marginLeft="5dp"
@@ -112,7 +114,8 @@
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:text="CHỦ ĐỀ NỔI BẬT"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent" />
 
             <GridView
                 android:layout_marginLeft="5dp"
@@ -133,7 +136,8 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"
                 android:text="BÀI HÁT NỔI BẬT"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent" />
 
             <GridView
                 android:layout_marginLeft="7dp"
