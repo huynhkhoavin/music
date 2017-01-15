@@ -53,16 +53,5 @@ public class PlaylistPlayerActivity extends AppCompatActivity {
         ListSongAdapter adapter = new ListSongAdapter(getBaseContext(), songSource);
         listSongs.setAdapter(adapter);
         listSongs.deferNotifyDataSetChanged();
-
-        listSongs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                SimpleSong item = (SimpleSong) parent.getItemAtPosition(position);
-
-                playlistImage.setImageResource(item.getImage());
-                currentPlay.setText(item.getName());
-                listenerCount.setText(FormatListenerCount(item.getListenerCount()));
-            }
-        });
     }
 }

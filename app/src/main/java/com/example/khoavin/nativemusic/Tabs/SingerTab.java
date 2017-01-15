@@ -1,5 +1,6 @@
 package com.example.khoavin.nativemusic.Tabs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.GridView;
 
 import com.example.khoavin.nativemusic.Adapter.SingerAdapter;
 import com.example.khoavin.nativemusic.DataObject.Artist;
+import com.example.khoavin.nativemusic.PlaylistPlayerActivity;
 import com.example.khoavin.nativemusic.R;
 
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.ArtistCollectionSource;
@@ -42,44 +44,13 @@ public class SingerTab extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Artist item = (Artist) parent.getItemAtPosition(position);
+
+                Intent intent = new Intent(getActivity(), PlaylistPlayerActivity.class);
+                intent.putExtra("PLAYLIST_IMAGE", R.drawable.nhac_dan_ca_2);
+                intent.putExtra("PLAYLIST_LISTENER_COUNT", 1215462);
+                startActivity(intent);
             }
         });
-
-//        //Bottom sheet view
-//        showFilter = (Button) view.findViewById(R.id.button_loc);
-//        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this.getContext());
-//        View bottomSheetView = inflater.inflate(R.layout.bottom_sheet_layout, null);
-//        bottomSheetDialog.setContentView(bottomSheetView);
-//
-//        gridView = (GridView)bottomSheetView.findViewById(R.id.grid_music_type);
-//        musicKindSource = MusicKindCollectionSource;
-//        BottomSheetAdapter musicKindAdapter = new BottomSheetAdapter(getActivity().getBaseContext(), musicKindSource);
-//        gridView.setAdapter(musicKindAdapter);
-//
-//        showFilter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                bottomSheetDialog.show();
-//            }
-//        });
-//
-//        LinearLayout closeButton = (LinearLayout) bottomSheetDialog.findViewById(R.id.close_button);
-//        closeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                bottomSheetDialog.dismiss();
-//            }
-//        });
-//
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                KindOfMusic item = (KindOfMusic) parent.getItemAtPosition(position);
-//                showFilter.setText(item.getName());
-//                bottomSheetDialog.dismiss();
-//            }
-//        });
 
         return view;
     }
