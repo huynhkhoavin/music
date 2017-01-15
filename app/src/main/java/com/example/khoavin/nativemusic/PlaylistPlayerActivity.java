@@ -59,9 +59,9 @@ public class PlaylistPlayerActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SimpleSong item = (SimpleSong) parent.getItemAtPosition(position);
 
-                playlistImage.setImageResource(item.getImage());
-                currentPlay.setText(item.getName());
-                listenerCount.setText(FormatListenerCount(item.getListenerCount()));
+//                playlistImage.setImageResource(item.getImage());
+//                currentPlay.setText(item.getName());
+//                listenerCount.setText(FormatListenerCount(item.getListenerCount()));
             }
         });
     }

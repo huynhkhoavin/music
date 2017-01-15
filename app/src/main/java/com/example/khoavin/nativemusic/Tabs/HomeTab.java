@@ -43,6 +43,7 @@ import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
 import com.example.khoavin.nativemusic.TopicDetailsActivity;
 import com.example.khoavin.nativemusic.VideoPlayerActivity;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import static android.view.View.VISIBLE;
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.*;
@@ -149,25 +150,6 @@ public class HomeTab extends Fragment {
             }
         });
 
-//        albumGrid.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                NormalPlayList item = (NormalPlayList)parent.getItemAtPosition(position);
-//
-//                if(item != null)
-//                {
-//                    Intent intent = new Intent(getActivity(), PlaylistPlayerActivity.class);
-//                    intent.putExtra("PLAYLIST_IMAGE", item.getPlayListImage());
-//                    intent.putExtra("PLAYLIST_LISTENER_COUNT", item.getListenerCount());
-//                    startActivity(intent);
-//                }
-//                else
-//                {
-//                    Toast.makeText(getContext(), "No item found!", Toast.LENGTH_LONG);
-//                }
-//            }
-//        });
 
         albumGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -188,7 +170,12 @@ public class HomeTab extends Fragment {
 
             }
         });
-
+        songGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ((MainActivity)getActivity()).slidingLayout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+            }
+        });
         //ViewFlipper
         this.viewFlipper = (ViewFlipper)view.findViewById(R.id.viewFlipper);
         viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getActivity().getBaseContext(), R.anim.in_from_right));

@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -18,6 +19,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
@@ -152,6 +154,26 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         });
         //endregion
     }
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Nhấn thêm lần nữa để thoát ứng dụng", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        // Handle action bar item clicks here. The action bar will
@@ -185,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     }
     //endregion
     //region Others Method
+
     @Override
     public void onAttachFragment(Fragment fragment){
        System.out.println(fragment.getId());
