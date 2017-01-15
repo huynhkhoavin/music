@@ -1,5 +1,6 @@
 package com.example.khoavin.nativemusic.ToolsFactory;
 
+import com.example.khoavin.nativemusic.DataObject.KindOfMusic;
 import com.example.khoavin.nativemusic.DataObject.NormalPlayList;
 import com.example.khoavin.nativemusic.DataObject.SimpleSong;
 import com.example.khoavin.nativemusic.DataObject.Topic;
@@ -7,6 +8,8 @@ import com.example.khoavin.nativemusic.DataObject.Video;
 import com.example.khoavin.nativemusic.R;
 
 import java.text.DecimalFormat;
+
+import static com.example.khoavin.nativemusic.DataObject.KindOfMusic.MusicKind.*;
 
 /**
  * Created by OatOal on 1/13/2017.
@@ -90,16 +93,24 @@ public  class CommonTools {
                     new SimpleSong("Căn Nhà Ngoại Ô", R.drawable.truong_vu, 6787, "Trường Vũ"),
             };
 
-//    int[] songImage = {
-//            R.drawable.quang_le,
-//            R.drawable.nhac_dan_ca,
-//            R.drawable.quang_dung,
-//            R.drawable.vinh_thuyen_kim,
-//            R.drawable.nhat_kim_anh,
-//            R.drawable.dan_nguyen,
-//            R.drawable.duong_ngoc_thai,
-//            R.drawable.tuan_vu,
-//            R.drawable.truong_vu
-//
-//    };
+    public static KindOfMusic[] MusicKindCollectionSource = new KindOfMusic[]
+            {
+                    new KindOfMusic("Nổi bậc", NEW),
+                    new KindOfMusic("Nhạc trẻ",  NHAC_TRE),
+                    new KindOfMusic("Tiền tuyến", NHAC_TIEN_TUYEN),
+                    new KindOfMusic("Nhạc vàng", NHAC_VANG),
+                    new KindOfMusic("Chèo", CHEO),
+                    new KindOfMusic("Hát bội", HAT_BOI),
+                    new KindOfMusic("Cải lương", CAI_LUONG),
+                    new KindOfMusic("Tân cổ", TAN_CO),
+                    new KindOfMusic("Đờn ca tài tử", DON_CA_TAI_TU),
+                    new KindOfMusic("Ca trù", CA_TRU),
+                    new KindOfMusic("Thiếu nhi", NHAC_THIEU_NHI),
+                    new KindOfMusic("Mùa xuân", NHAC_XUAN),
+                    new KindOfMusic("Tuổi học sinh", NHAC_HOC_SINH),
+                    new KindOfMusic("Nhạc sến", NHAC_SEN),
+                    new KindOfMusic("Trử tình", NHAC_TRU_TINH),
+                    new KindOfMusic("Nhã nhạc", NHA_NHAC),
+                    new KindOfMusic("Nhạc chế", NHAC_CHE),
+            };
 }
