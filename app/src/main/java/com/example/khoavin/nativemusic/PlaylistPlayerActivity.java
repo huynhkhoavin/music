@@ -9,13 +9,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
-import com.example.khoavin.nativemusic.Adapter.ListVideoSmallAdapter;
 import com.example.khoavin.nativemusic.DataObject.SimpleSong;
-import com.example.khoavin.nativemusic.DataObject.Video;
 
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.FormatListenerCount;
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.SongCollectionSource;
-import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.VideoCollectionSource;
 
 public class PlaylistPlayerActivity extends AppCompatActivity {
 
@@ -34,7 +31,7 @@ public class PlaylistPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_playlist_player);
         listSongs = (ListView)findViewById(R.id.playlist_list_song);
 
-        playlistImage = (ImageView)findViewById(R.id.playlist_image);
+        playlistImage = (ImageView)findViewById(R.id.grid_image);
         currentPlay = (TextView)findViewById(R.id.playlist_current_play);
         listenerCount = (TextView)findViewById(R.id.playlist_listener_count);
 

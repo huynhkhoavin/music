@@ -10,44 +10,45 @@
         android:layout_height="40dp"
         android:clickable="true">
     </android.support.v7.widget.SearchView>
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <ViewFlipper
+        android:layout_height="476dp">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
-            <ImageView
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="ALBUM NỔI BẬT"
+                android:gravity="center_vertical"
+                android:layout_height="40dp" />
+            <GridView
+                android:id="@+id/grid_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@color/big_text"/>
-            <ImageView
+                android:layout_height="420dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:focusable="false"
+                android:numColumns="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                ></GridView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="VIDEO NỔI BẬT"
+                android:layout_height="wrap_content" />
+            <GridView
+                android:id="@+id/grid_view2"
                 android:layout_width="match_parent"
-                android:src="@drawable/chude_thugian"
-                android:layout_height="match_parent" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:src="@drawable/chude_cachmang"
-                android:layout_height="match_parent" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </ViewFlipper>
+                android:layout_height="420dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:focusable="false"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"></GridView>
 
-        <GridView
-            android:id="@+id/grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/layout_border"
-            android:gravity="center"
-            android:horizontalSpacing="8dp"
-            android:numColumns="3"
+        </LinearLayout>
+    </ScrollView>
 
-            android:verticalSpacing="8dp"></GridView>
-
-
-    </LinearLayout>
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.example.khoavin.nativemusic.Tabs;
 
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
@@ -36,8 +35,7 @@ public class RankTab extends Fragment {
         listRank.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println(position);
-                return ;
+                Toast.makeText(getContext(),"OOO"+position,Toast.LENGTH_SHORT).show();
             }
         });
         return view;

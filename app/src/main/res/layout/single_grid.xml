@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="150dp"
-    android:weightSum="1"
-    android:elevation="8dp"
-    android:background="@drawable/border">
-    <ImageView
-        android:id="@+id/grid_image"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        >
-    </ImageView>
-    <TextView
-        android:id="@+id/grid_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="9sp" >
-    </TextView>
-    <TextView
-        android:id="@+id/grid_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="9sp" >
-    </TextView>
-</LinearLayout>
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="120dp"
+        android:orientation="vertical"
+        android:layout_height="120dp"
+        android:elevation="4dp"
+        android:id="@+id/linear_layout"
+    android:background="@drawable/nhac_dan_ca_6"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:clipToPadding="false"
+            android:layout_marginTop="90dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lạc Trôi"
+                android:layout_marginTop="5dp"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:paddingRight="10dp"
+                android:textColor="@color/white"
+
+                android:textSize="8dp"
+                android:paddingLeft="5dp"
+                android:layout_gravity="center_horizontal"
+
+                android:id="@+id/grid_songname"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="7sp"
+                android:text="Sơn Tùng MTP"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:paddingLeft="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/layout_white"
+                android:id="@+id/grid_singername"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>

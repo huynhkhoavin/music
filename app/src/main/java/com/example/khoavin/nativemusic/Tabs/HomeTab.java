@@ -27,54 +27,36 @@ import android.support.v8.renderscript.*;
 import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.GridViewAdapter;
+import com.example.khoavin.nativemusic.DataObject.NormalPlayList;
 import com.example.khoavin.nativemusic.MainActivity;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
 
 import static android.view.View.VISIBLE;
-
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.PlaylistCollectionSource;
 /**
  * Created by KhoaVin on 12/12/2016.
  */
 
 public class HomeTab extends Fragment {
     GridView grid;
+    GridView grid2;
     ListView listView;
-    String[] web = {
-            "Google",
-            "Github",
-            "Instagram",
-            "Facebook",
-            "Flickr",
-            "Pinterest",
-            "Quora",
-            "Twitter",
-            "Vimeo",
-            "WordPress",
-            "Youtube",
-            "Stumbleupon",
-            "SoundCloud",
-            "Reddit",
-            "Blogger"
+    NormalPlayList[] dataSource;
 
-    } ;
-    int[] imageId = {
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background,
-            R.drawable.background
+    int[] listImage = {
+            R.drawable.duong_ngoc_thai,
+            R.drawable.quang_dung,
+            R.drawable.quang_le,
+            R.drawable.lactroi_music,
+            R.drawable.duong_ngoc_thai,
+            R.drawable.quang_dung,
+            R.drawable.quang_le,
+            R.drawable.lactroi_music,
+            R.drawable.lactroi_music
     };
+    String[] listSongName = {"Éo Le Cuộc Tình","Anh Còn Nợ Em", "Xuân Này Con Không Về","Cơn Mưa Ngang Qua","Éo Le Cuộc Tình","Anh Còn Nợ Em", "Xuân Này Con Không Về","Cơn Mưa Ngang Qua","Cơn Mưa Ngang Qua"};
+    String[] listSingerName = {"Dương Ngọc Thái", "Quang Dũng", "Quang Lê", "Sơn Tùng M-TP","Dương Ngọc Thái", "Quang Dũng", "Quang Lê", "Sơn Tùng M-TP","Sơn Tùng M-TP"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -84,14 +66,16 @@ public class HomeTab extends Fragment {
         Bitmap blurBitmap = BlurBuilder.blur(bitmap,this.getContext());
         //view.setBackground(new BitmapDrawable(getResources(), bitmap));
 
+        dataSource = PlaylistCollectionSource;
         //region GRIDVIEW
-        GridViewAdapter adapter = new GridViewAdapter(getActivity().getBaseContext(),web,imageId);
+        GridViewAdapter adapter = new GridViewAdapter(getActivity().getBaseContext(),listImage,listSongName,listSingerName);
         grid = (GridView)view.findViewById(R.id.grid_view);
+        grid2 = (GridView)view.findViewById(R.id.grid_view2);
         grid.setAdapter(adapter);
+        grid2.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
                 PopupMenu popupMenu = new PopupMenu(getActivity(),view);
                 popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
 
