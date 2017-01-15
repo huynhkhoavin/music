@@ -8,6 +8,7 @@
     <android.support.v7.widget.SearchView
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:queryHint="Search"
         android:clickable="true">
     </android.support.v7.widget.SearchView>
     <ScrollView
@@ -22,33 +23,68 @@
                 android:layout_width="wrap_content"
                 android:text="ALBUM NỔI BẬT"
                 android:gravity="center_vertical"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
                 android:layout_height="40dp" />
             <GridView
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="350dp"
                 android:gravity="center"
-                android:horizontalSpacing="5dp"
                 android:focusable="false"
                 android:numColumns="3"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 ></GridView>
             <TextView
                 android:layout_width="wrap_content"
                 android:text="VIDEO NỔI BẬT"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
                 android:layout_height="wrap_content" />
             <GridView
                 android:id="@+id/grid_view2"
+                android:elevation="0.5dp"
                 android:layout_width="match_parent"
-                android:layout_height="420dp"
+                android:layout_height="380dp"
                 android:gravity="center"
-                android:horizontalSpacing="10dp"
-                android:focusable="false"
+                android:horizontalSpacing="4dp"
                 android:numColumns="2"
-                android:verticalSpacing="10dp"></GridView>
+                android:layout_marginTop="5dp"
+                android:verticalSpacing="4dp">
+            </GridView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="CHỦ ĐỀ NỔI BẬT"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="483dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="0dp"
+                android:dividerHeight="2dp"
+                android:id="@+id/topic_listview" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="BÀI HÁT NỔI BẬT"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
 
+                android:dividerHeight="2dp"
+                android:id="@+id/song_listview" />
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

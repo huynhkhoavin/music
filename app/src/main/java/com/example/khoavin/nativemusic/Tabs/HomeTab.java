@@ -1,39 +1,33 @@
 package com.example.khoavin.nativemusic.Tabs;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.BlurMaskFilter;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-import android.widget.TextView;
-import android.support.v8.renderscript.*;
 import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.GridViewAdapter;
+import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
+import com.example.khoavin.nativemusic.Adapter.NormalPlayListAdapter;
+import com.example.khoavin.nativemusic.Adapter.TopicAdapter;
 import com.example.khoavin.nativemusic.DataObject.NormalPlayList;
-import com.example.khoavin.nativemusic.MainActivity;
+import com.example.khoavin.nativemusic.DataObject.SimpleSong;
+import com.example.khoavin.nativemusic.DataObject.Topic;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
 
-import static android.view.View.VISIBLE;
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.PlaylistCollectionSource;
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.SongCollectionSource;
+import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.TopicCollectionSource;
+
 /**
  * Created by KhoaVin on 12/12/2016.
  */
@@ -41,9 +35,11 @@ import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.PlaylistC
 public class HomeTab extends Fragment {
     GridView grid;
     GridView grid2;
-    ListView listView;
+    ListView listTopic;
+    ListView listSong;
     NormalPlayList[] dataSource;
-
+    SimpleSong[] collectionSource;
+    Topic[] topicSource;
     int[] listImage = {
             R.drawable.duong_ngoc_thai,
             R.drawable.quang_dung,
@@ -67,12 +63,24 @@ public class HomeTab extends Fragment {
         //view.setBackground(new BitmapDrawable(getResources(), bitmap));
 
         dataSource = PlaylistCollectionSource;
+        topicSource = TopicCollectionSource;
+        collectionSource = SongCollectionSource;
+
+        listTopic = (ListView)view.findViewById(R.id.topic_listview);
+        TopicAdapter topicAdapter = new TopicAdapter(getActivity().getBaseContext(), topicSource);
+        listTopic.setAdapter(topicAdapter);
+
+        listSong = (ListView)view.findViewById(R.id.song_listview);
+        ListSongAdapter listSongAdapter = new ListSongAdapter(getActivity().getBaseContext(),collectionSource);
+        listSong.setAdapter(listSongAdapter);
+
         //region GRIDVIEW
         GridViewAdapter adapter = new GridViewAdapter(getActivity().getBaseContext(),listImage,listSongName,listSingerName);
+        NormalPlayListAdapter normalPlayListAdapter = new NormalPlayListAdapter(getActivity().getBaseContext(),dataSource);
         grid = (GridView)view.findViewById(R.id.grid_view);
         grid2 = (GridView)view.findViewById(R.id.grid_view2);
         grid.setAdapter(adapter);
-        grid2.setAdapter(adapter);
+        grid2.setAdapter(normalPlayListAdapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

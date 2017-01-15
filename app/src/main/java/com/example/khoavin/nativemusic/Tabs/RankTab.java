@@ -11,7 +11,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.khoavin.nativemusic.Adapter.PlaylistAdapter;
+import com.example.khoavin.nativemusic.MainActivity;
 import com.example.khoavin.nativemusic.R;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
  * Created by KhoaVin on 13/12/2016.
@@ -36,6 +38,7 @@ public class RankTab extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(),"OOO"+position,Toast.LENGTH_SHORT).show();
+                ((MainActivity)getActivity()).slidingLayout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
             }
         });
         return view;

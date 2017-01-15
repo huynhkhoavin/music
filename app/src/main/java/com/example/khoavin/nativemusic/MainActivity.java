@@ -12,8 +12,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
 import com.example.khoavin.nativemusic.Adapter.TabPagerAdapter;
@@ -28,13 +32,16 @@ import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.SongColle
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener,OnActionClickedListener {
     //region VIEWPAGER+ACTIONBAR
     private ViewPager viewPager;
+    ImageButton playbtn;
+    TextView SongTitle;
+    TextView SingerName;
     private TabPagerAdapter tabPagerAdapter;
     SimpleSong[] collectionSource = SongCollectionSource;
     private ActionBar actionBar;
     private String[] tabName = {"First","Second","Third"};
     //endregion
     //region SLIDE PANEL
-    SlidingUpPanelLayout slidingLayout;
+    public SlidingUpPanelLayout slidingLayout;
     //Button btnShow;
     //Button btnHide;
     //TextView textView;
@@ -122,6 +129,27 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 }
             }
         });
+
+        SongTitle = (TextView)findViewById(R.id.musicTitle);
+        SingerName = (TextView)findViewById(R.id.musicArtistName);
+        final Animation animation1 =
+                AnimationUtils.loadAnimation(getApplicationContext(), R.anim.song_anim);
+
+        playbtn = (ImageButton)findViewById(R.id.Play_btn);
+        playbtn.setBackgroundResource(R.drawable.playing_play_normal);
+        playbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mInteractivePlayerView.isPlaying()) {
+                    mInteractivePlayerView.start();
+                    playbtn.setBackgroundResource(R.drawable.playing_pause_normal);
+
+                } else {
+                    mInteractivePlayerView.stop();
+                    playbtn.setBackgroundResource(R.drawable.playing_play_normal);
+                }
+            }
+        });
         //endregion
     }
 //    @Override
@@ -188,24 +216,28 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             @Override
             public void onPanelSlide(View view, float v) {
 //                textView.setText("panel is sliding");
+                playbtn.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onPanelCollapsed(View view) {
 //                textView.setText("panel Collapse");
                 actionBar.show();
+                playbtn.setBackgroundResource(R.drawable.playing_play_normal);
+                playbtn.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onPanelExpanded(View view) {
 //                textView.setText("panel expand");
                 actionBar.hide();
-
+                playbtn.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onPanelAnchored(View view) {
 //                textView.setText("panel anchored");
+                playbtn.setBackgroundResource(R.drawable.playing_play_normal);
             }
 
             @Override

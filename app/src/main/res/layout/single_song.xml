@@ -79,7 +79,7 @@
         android:id="@+id/btn_three_dots"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="20dp"
-
+        android:focusable="false"
 
         style="@style/Widget.AppCompat.Button.Borderless"
         android:background="@drawable/button_triangle_list_normal"

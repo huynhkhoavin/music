@@ -23,8 +23,10 @@ import com.example.khoavin.nativemusic.Adapter.GridViewAdapter;
 import com.example.khoavin.nativemusic.Adapter.ListSongAdapter;
 import com.example.khoavin.nativemusic.DataObject.KindOfMusic;
 import com.example.khoavin.nativemusic.DataObject.SimpleSong;
+import com.example.khoavin.nativemusic.MainActivity;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.ToolsFactory.BlurBuilder;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.MusicKindCollectionSource;
 import static com.example.khoavin.nativemusic.ToolsFactory.CommonTools.SongCollectionSource;
@@ -54,10 +56,11 @@ public class SongTab extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "You Clicked at " +collectionSource[+ position].getName(), Toast.LENGTH_SHORT).show();
+
+                ((MainActivity)getActivity()).slidingLayout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
             }
         });
-//        listView = (ListView) view.findViewById(R.id.horizontal_listview);
+//        listTopic = (ListView) view.findViewById(R.id.horizontal_listview);
         //endregion
 
         //Bottom sheet view
