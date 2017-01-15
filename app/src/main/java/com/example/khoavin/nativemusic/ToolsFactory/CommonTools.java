@@ -143,7 +143,6 @@ public  class CommonTools {
                     new NormalPlayList("Sơn Tùng MTP", R.drawable.playlist_lactroi, "", 325000, "Lạc trôi"),
                     new NormalPlayList("Bảo Thy", R.drawable.playlist_ngoinhahoahong, "", 325000, "Ngôi nhà hoa hồng"),
                     new NormalPlayList("Đàm Vĩnh Hưng", R.drawable.playlist_demlangthang, "", 325000, "Đêm lang thang"),
-                    new NormalPlayList("Lý Hải", R.drawable.playlist_trondoibenem, "", 325000, "Trọn đời bên em")
             };
 
     public static SimpleSong[] MainmenuSongCollectionSource = new SimpleSong[]
