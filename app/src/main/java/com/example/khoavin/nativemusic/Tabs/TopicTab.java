@@ -20,6 +20,7 @@ import com.example.khoavin.nativemusic.Adapter.TopicAdapter;
 import com.example.khoavin.nativemusic.DataObject.KindOfMusic;
 import com.example.khoavin.nativemusic.DataObject.Topic;
 import com.example.khoavin.nativemusic.DataObject.Video;
+import com.example.khoavin.nativemusic.PlayerActivity;
 import com.example.khoavin.nativemusic.R;
 import com.example.khoavin.nativemusic.TopicDetailsActivity;
 import com.example.khoavin.nativemusic.VideoPlayerActivity;
@@ -59,6 +60,8 @@ public class TopicTab extends Fragment {
                 {
                     Intent intent = new Intent(getActivity(), TopicDetailsActivity.class);
                     startActivity(intent);
+                    //Intent intent = new Intent(getActivity(), PlayerActivity.class);
+                    //startActivity(intent);
 
                     //getFragmentManager().beginTransaction().replace(R.id.content, new PlayListTab()).addToBackStack(null).commit();
                 }
