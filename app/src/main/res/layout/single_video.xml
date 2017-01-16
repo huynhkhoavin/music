@@ -25,18 +25,23 @@
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:elevation="8dp"
             android:layout_width="10dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
             android:background="@android:drawable/stat_sys_headset"/>
         <TextView
+            android:elevation="8dp"
+            style="@style/AudioFileInfoOverlayText"
+            android:textStyle="normal|bold"
+            android:fontFamily="serif"
+
             android:layout_width="42dp"
             android:layout_height="match_parent"
             android:text="999 K"
             android:textColor="@color/white"
             android:gravity="center"
             android:textSize="10sp"
-            android:textStyle="bold"
             android:id="@+id/video_listener_count_parent"/>
     </LinearLayout>
 

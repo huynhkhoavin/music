@@ -28,6 +28,8 @@ public class PlaylistPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        songSource = SongCollectionSource;
+
         setContentView(R.layout.activity_playlist_player);
         listSongs = (ListView)findViewById(R.id.playlist_list_song);
 
@@ -35,23 +37,36 @@ public class PlaylistPlayerActivity extends AppCompatActivity {
         currentPlay = (TextView)findViewById(R.id.playlist_current_play);
         listenerCount = (TextView)findViewById(R.id.playlist_listener_count);
 
-        Bundle extras = getIntent().getExtras();
-        if(extras == null)
+        if(songSource.length != 0)
         {
-            playlistImage.setImageResource(R.drawable.nhac_dan_ca);
-            currentPlay.setText("Unknow");
-            listenerCount.setText("0");
-        }
-        else
-        {
-            playlistImage.setImageResource(extras.getInt("PLAYLIST_IMAGE"));
-            listenerCount.setText(FormatListenerCount(extras.getLong("PLAYLIST_LISTENER_COUNT")));
+            listenerCount.setText(FormatListenerCount(songSource[0].getListenerCount()));
+            currentPlay.setText(songSource[0].getName());
         }
 
-
-        songSource = SongCollectionSource;
         ListSongAdapter adapter = new ListSongAdapter(getBaseContext(), songSource);
         listSongs.setAdapter(adapter);
         listSongs.deferNotifyDataSetChanged();
+
+//        listSongs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//                try
+//                {
+//                    SimpleSong item = (SimpleSong)parent.getItemAtPosition(position);
+//
+//                    if(item != null)
+//                    {
+//                        listenerCount.setText(FormatListenerCount(item.getListenerCount()));
+//                        currentPlay.setText(item.getName());
+//                    }
+//                }catch (Exception e)
+//                {
+//                    System.out.print("##########################################");
+//                    System.out.print("Khong the nhan duoc item dang click cho playlist");
+//                    System.out.print("##########################################");
+//                }
+//            }
+//        });
     }
 }

@@ -13,17 +13,10 @@
             android:id="@+id/grid_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/nhac_dan_ca_5"
+            android:src="@drawable/equa_music"
             android:scaleType="fitXY"/>
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/play_details"
-            android:layout_centerInParent="true"/>
-
         <LinearLayout
-            android:background="#66999999"
             android:layout_width="100dp"
             android:layout_height="27dp"
             android:orientation="horizontal"
@@ -34,17 +27,20 @@
             android:layout_marginRight="10dp">
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon_download"/>
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon_video_share"/>
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
@@ -54,7 +50,7 @@
 
         <LinearLayout
             android:layout_alignParentRight="true"
-            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_width="wrap_content"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
@@ -73,7 +69,10 @@
                 android:layout_height="match_parent"
                 android:text="950 K"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:layout_marginLeft="7dp"/>
@@ -87,8 +86,12 @@
             android:text="Quê em chiều nước lũ"
             android:textColor="@color/white"
             android:textSize="17sp"
+            android:elevation="8dp"
+            style="@style/AudioFileInfoOverlayText"
+            android:textStyle="normal|bold"
+            android:fontFamily="serif"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"/>
 
     </RelativeLayout>

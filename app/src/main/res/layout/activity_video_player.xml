@@ -22,7 +22,6 @@
             android:layout_centerInParent="true"/>
 
         <LinearLayout
-            android:background="#66999999"
             android:layout_width="100dp"
             android:layout_height="27dp"
             android:orientation="horizontal"
@@ -33,28 +32,25 @@
             android:layout_marginRight="10dp">
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon_download"/>
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon_video_share"/>
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon_like"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:background="#66eeeeee"
-            android:layout_width="match_parent"
-            android:layout_height="27dp">
-        </LinearLayout>>
 
         <LinearLayout
             android:layout_marginLeft="20dp"
@@ -69,16 +65,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Quê em chiều nước lũ"
-                android:textColor="@color/big_text"
+                android:textColor="@color/white"
                 android:textSize="13sp"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif"
                 android:gravity="center"/>
 
             <ImageView
+                android:elevation="8dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:background="@drawable/icon_listen"/>
+                android:background="@android:drawable/stat_sys_headset"/>
 
             <TextView
                 android:id="@+id/video_listener_count"
@@ -86,9 +87,12 @@
                 android:layout_height="match_parent"
                 android:text="950 K"
                 android:gravity="center"
-                android:textColor="@color/small_text"
+                android:textColor="@color/white"
                 android:textSize="12sp"
-                android:textStyle="bold"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif"
                 android:layout_marginLeft="7dp"/>
         </LinearLayout>
 

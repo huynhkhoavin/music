@@ -23,8 +23,12 @@
                 android:layout_height="wrap_content"
                 android:text="Lạc Trôi"
                 android:layout_marginTop="5dp"
+
                 android:elevation="8dp"
                 style="@style/AudioFileInfoOverlayText"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif"
+
                 android:paddingRight="10dp"
                 android:textColor="@color/white"
 
@@ -32,9 +36,7 @@
                 android:paddingLeft="5dp"
                 android:layout_gravity="center_horizontal"
 
-                android:id="@+id/grid_songname"
-                android:textStyle="normal|bold"
-                android:fontFamily="serif">
+                android:id="@+id/grid_songname">
 
             </TextView>
 

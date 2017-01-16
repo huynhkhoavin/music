@@ -44,7 +44,10 @@
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:textSize="10sp"
-                android:textStyle="bold"
+                android:elevation="8dp"
+                style="@style/AudioFileInfoOverlayText"
+                android:textStyle="normal|bold"
+                android:fontFamily="serif"
                 android:id="@+id/playlist_listener_count"/>
         </LinearLayout>
 
